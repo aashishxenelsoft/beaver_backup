@@ -27,6 +27,12 @@
     }
   }
 
+  function applyFooterArticlesVisibility() {
+    if (document.body.getAttribute("data-footer-articles") !== "false") return;
+    var articles = document.getElementById("footer-latest-articles");
+    if (articles) articles.remove();
+  }
+
   function setActiveNav() {
     var current = document.body.getAttribute("data-nav") || "";
     document.querySelectorAll("[data-nav-slug]").forEach(function (link) {
@@ -36,6 +42,35 @@
         link.setAttribute("aria-current", "page");
         link.classList.add("is-active");
       }
+    });
+  }
+
+  function initFranchiseFaq() {
+    var root = document.querySelector("[data-franchise-faq]");
+    if (!root) return;
+
+    function setItemOpen(item, open) {
+      var btn = item.querySelector(".franchise-faq-item__trigger");
+      var panel = item.querySelector(".franchise-faq-item__panel");
+      if (!btn || !panel) return;
+      item.classList.toggle("is-open", open);
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      if (open) panel.removeAttribute("hidden");
+      else panel.setAttribute("hidden", "");
+    }
+
+    root.querySelectorAll(".franchise-faq-item").forEach(function (item) {
+      var btn = item.querySelector(".franchise-faq-item__trigger");
+      if (!btn) return;
+      btn.addEventListener("click", function () {
+        var willOpen = !item.classList.contains("is-open");
+        if (willOpen) {
+          root.querySelectorAll(".franchise-faq-item.is-open").forEach(function (openItem) {
+            if (openItem !== item) setItemOpen(openItem, false);
+          });
+        }
+        setItemOpen(item, willOpen);
+      });
     });
   }
 
@@ -75,8 +110,11 @@
     await injectPartial(headerUrl, headerMount);
     await injectPartial(footerUrl, footerMount);
 
+    applyFooterArticlesVisibility();
+
     setActiveNav();
     initNavToggle();
+    initFranchiseFaq();
 
     var yearEl = document.getElementById("footer-year");
     if (yearEl) {
