@@ -1,0 +1,557 @@
+<section class="latest-articles" aria-labelledby="latest-articles-heading">
+  <style>
+    .latest-articles {
+      position: sticky;
+      top: 0;
+      z-index: 0;
+      background: #fff;
+      color: #1a1a1a;
+      font-family: Montserrat, ui-sans-serif, sans-serif;
+      padding: clamp(40px, 6vw, 72px) 0 clamp(48px, 7vw, 80px);
+    }
+
+    .latest-articles__inner {
+      max-width: var(--site-max);
+      margin: 0 auto;
+      padding: 0 var(--site-px);
+      box-sizing: border-box;
+    }
+
+    .latest-articles__head {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: clamp(28px, 4vw, 40px);
+    }
+
+    .latest-articles__head-spacer {
+      min-width: 0;
+    }
+
+    .latest-articles__title {
+      margin: 0;
+      font-size: clamp(16px, 2.2vw, 22px);
+      font-weight: 800;
+      line-height: 1.25;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      color: #111;
+    }
+
+    .latest-articles__view-all {
+      justify-self: end;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 18px;
+      border: 1px solid #0056b3;
+      border-radius: 6px;
+      background: #fff;
+      color: #0056b3;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .latest-articles__view-all:hover {
+      background: #0056b3;
+      color: #fff;
+    }
+
+    .latest-articles__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(20px, 3vw, 32px);
+    }
+
+    .latest-articles__card {
+      margin: 0;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      min-height: 0;
+    }
+
+    .latest-articles__link {
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-height: 100%;
+      height: 100%;
+    }
+
+    .latest-articles__thumb {
+      display: block;
+      width: 100%;
+      flex-shrink: 0;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      border-radius: 24px;
+      margin-bottom: 16px;
+    }
+
+    .latest-articles__text {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+
+    .latest-articles__card-title {
+      margin: 0 0 10px;
+      font-size: clamp(15px, 1.35vw, 17px);
+      font-weight: 800;
+      line-height: 1.35;
+      color: #111;
+    }
+
+    .latest-articles__excerpt {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #666;
+    }
+
+    .latest-articles__date {
+      margin: auto 0 0;
+      padding-top: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #0056b3;
+    }
+
+    @media (max-width: 900px) {
+      .latest-articles__head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+      }
+
+      .latest-articles__head-spacer {
+        display: none;
+      }
+
+      .latest-articles__title {
+        text-align: center;
+      }
+
+      .latest-articles__grid {
+        grid-template-columns: 1fr;
+        max-width: 520px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .latest-articles {
+        position: static;
+      }
+    }
+  </style>
+
+  <div class="latest-articles__inner">
+    <header class="latest-articles__head">
+      <span class="latest-articles__head-spacer" aria-hidden="true"></span>
+      <h2 id="latest-articles-heading" class="latest-articles__title">
+        Checkout our latest articles
+      </h2>
+      <a href="#" class="latest-articles__view-all">View All Articles <span aria-hidden="true">→</span></a>
+    </header>
+
+    <div class="latest-articles__grid">
+      <article class="latest-articles__card">
+        <a href="#" class="latest-articles__link">
+          <img
+            class="latest-articles__thumb"
+            src="assets/images/article_1.png"
+            alt=""
+            width="400"
+            height="250"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="latest-articles__text">
+            <h3 class="latest-articles__card-title">How Helmet Cleaning Machines Improve Helmet Lifespan</h3>
+            <p class="latest-articles__excerpt">
+              A helmet offers more protection than any other wearable device, with the most damage done...
+            </p>
+            <p class="latest-articles__date">22-01-2026</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="latest-articles__card">
+        <a href="#" class="latest-articles__link">
+          <img
+            class="latest-articles__thumb"
+            src="assets/images/article_2.png"
+            alt=""
+            width="400"
+            height="250"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="latest-articles__text">
+            <h3 class="latest-articles__card-title">
+              Fresh Juice Vending Machine Business Opportunities in Singapore
+            </h3>
+            <p class="latest-articles__excerpt">
+              The fast-paced lifestyle of Singaporeans has led to a significant rise in the demand for...
+            </p>
+            <p class="latest-articles__date">22-01-2026</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="latest-articles__card">
+        <a href="#" class="latest-articles__link">
+          <img
+            class="latest-articles__thumb"
+            src="assets/images/article_3.png"
+            alt=""
+            width="400"
+            height="250"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="latest-articles__text">
+            <h3 class="latest-articles__card-title">How a Car Mat Cleaner Machine Improves Car Interior Hygiene</h3>
+            <p class="latest-articles__excerpt">
+              Maintaining a clean car is a health matter; it creates a more pleasant environment for...
+            </p>
+            <p class="latest-articles__date">22-01-2026</p>
+          </div>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <style>
+    .site-footer {
+      position: relative;
+      z-index: 5;
+      background: #fff;
+      color: #222;
+      font-family: inherit;
+    }
+
+    .footer-touch {
+      background: #fff;
+      border-top: 1px solid #e5e7eb;
+      padding: 40px 0 48px;
+      text-align: center;
+    }
+
+    .footer-touch-inner {
+      max-width: var(--site-max);
+      margin: 0 auto;
+      padding: 0 var(--site-px);
+      box-sizing: border-box;
+    }
+
+    .footer-touch h2 {
+      margin: 0;
+      font-size: clamp(20px, 3.2vw, 30px);
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .footer-touch h2 .blue {
+      color: #0056b3;
+    }
+
+    .footer-touch h2 .dark {
+      color: #111;
+    }
+
+    .footer-contact-list {
+      margin: 20px auto 0;
+      padding: 0;
+      list-style: none;
+      font-size: 16px;
+      line-height: 1.65;
+      color: #555;
+    }
+
+    .footer-contact-list a {
+      color: #555;
+      text-decoration: none;
+    }
+
+    .footer-contact-list strong {
+      color: #222;
+      font-weight: 800;
+    }
+
+    .footer-location-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 26px;
+      padding: 12px 28px;
+      background: #0056b3;
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 6px;
+      transition: 0.2s ease;
+    }
+
+    .footer-location-btn:hover {
+      background: #004da0;
+    }
+
+    .footer-main {
+      border-top: 1px solid #dcdcdc;
+      background: #fff;
+    }
+
+    .footer-container {
+      max-width: var(--site-max);
+      margin: 0 auto;
+      padding: 36px var(--site-px);
+      display: grid;
+      grid-template-columns: 2fr 0.65fr 0.65fr 1fr;
+      gap: 40px;
+      align-items: start;
+      box-sizing: border-box;
+    }
+
+    .footer-logo {
+      width: 140px;
+      height: auto;
+      display: block;
+    }
+
+    .footer-about {
+      margin: 16px 0 0;
+      max-width: 650px;
+      font-size: 13px;
+      line-height: 1.75;
+      color: #555;
+    }
+
+    .footer-social {
+      margin-top: 16px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .footer-social a {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #f1f1f1;
+      color: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .footer-col h3 {
+      margin: 0 0 14px;
+      font-size: 15px;
+      font-weight: 800;
+      color: #222;
+    }
+
+    .footer-col ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 12px;
+    }
+
+    .footer-col a {
+      color: #555;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .footer-col a:hover {
+      color: #0056b3;
+    }
+
+    .footer-newsletter label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    .footer-newsletter input {
+      width: 100%;
+      max-width: 360px;
+      padding: 11px 14px;
+      border: 1px solid #bbb;
+      border-radius: 8px;
+      font-size: 13px;
+      outline: none;
+      box-sizing: border-box;
+    }
+
+    .footer-newsletter input:focus {
+      border-color: #0056b3;
+    }
+
+    .footer-newsletter button {
+      margin-top: 14px;
+      padding: 10px 22px;
+      border: 0;
+      border-radius: 999px;
+      background: #151515;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .footer-newsletter button:hover {
+      background: #0056b3;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #dcdcdc;
+      max-width: var(--site-max);
+      margin: 0 auto;
+      padding: 14px var(--site-px);
+      text-align: center;
+      font-size: 12px;
+      color: #555;
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 1024px) {
+      .footer-container {
+        grid-template-columns: 1.5fr 1fr 1fr;
+        padding: 32px var(--site-px);
+      }
+
+      .footer-newsletter {
+        grid-column: span 3;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+        padding: 28px var(--site-px);
+        gap: 26px;
+      }
+
+      .footer-newsletter {
+        grid-column: auto;
+      }
+
+      .footer-contact-list {
+        font-size: 15px;
+      }
+    }
+  </style>
+
+  <section class="footer-touch">
+    <div class="footer-touch-inner">
+      <h2>
+        <span class="blue">Get in Touch</span>
+        <span class="dark"> with us!</span>
+      </h2>
+
+      <ul class="footer-contact-list">
+        <li>
+          <strong>General:</strong>
+          <a href="mailto:contact@beaverenergy.com.sg">contact@beaverenergy.com.sg</a>
+        </li>
+        <li>
+          <strong>Sales:</strong>
+          <a href="mailto:sales@beaverenergy.com.sg">sales@beaverenergy.com.sg</a>
+        </li>
+        <li>
+          <strong>Phone Number:</strong>
+          <a href="tel:+6581880781">+65 8188 0781</a>
+        </li>
+      </ul>
+
+      <a href="#" class="footer-location-btn">See All Locations</a>
+    </div>
+  </section>
+
+  <div class="footer-main">
+    <div class="footer-container">
+      <section class="footer-brand">
+        <a href="index.html" aria-label="Beaver Energy home">
+          <img src="assets/images/beaver_logo.png" alt="Beaver" class="footer-logo" />
+        </a>
+
+        <p class="footer-about">
+          Beaver is a trusted leader in self-service machine innovation, empowering businesses across
+          Singapore with advanced automation and user-friendly technology. Every Beaver product is built for
+          reliability, efficiency, and long-term value.
+          <br />
+          With Beaver, you don’t just get machines, you get smarter business solutions.
+        </p>
+
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">◎</a>
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="TikTok">♪</a>
+        </div>
+      </section>
+
+      <nav class="footer-col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Solutions</a></li>
+          <li><a href="#">Machines</a></li>
+          <li><a href="#">Franchise</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="#">Blogs</a></li>
+          <li><a href="#">Locations</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </nav>
+
+      <section class="footer-col footer-newsletter">
+        <h3>Join Our Newsletter</h3>
+        <form action="#" method="post">
+          <label for="footer-email">Your Email</label>
+          <input id="footer-email" type="email" name="email" placeholder="Enter Your Email" />
+          <br />
+          <button type="submit">Subscribe Now</button>
+        </form>
+      </section>
+    </div>
+
+    <div class="footer-bottom">
+      © Copyright <span id="footer-year"></span> Beaver. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("footer-year").textContent = new Date().getFullYear();
+</script>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact Beaver Energy — request information, partnership details, or a callback from our team."
+    />
+    <title>Contact — Beaver Energy</title>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Contact — Beaver Energy" />
+    <meta
+      property="og:description"
+      content="Contact Beaver Energy — request information, partnership details, or a callback from our team."
+    />
+    <meta property="og:image" content="assets/images/og-default.png" />
+    <meta property="og:url" content="contact.html" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body
+    class="site-body"
+    data-nav="contact"
+    data-include-header="includes/header.html"
+    data-include-footer="includes/footer.html"
+  >
+    <!-- WordPress: get_header(); -->
+    <div id="site-include-header"></div>
+
+    <main id="site-main" class="site-main">
+      <!-- WordPress: page-contact.php — swap form for Contact Form 7 / WPForms shortcode or custom handler -->
+      <section class="contact-section" aria-labelledby="contact-heading">
+        <div class="contact-section__grid">
+          <header>
+            <h1 id="contact-heading" class="contact-section__title">Contact us</h1>
+            <p class="contact-section__intro">
+              Send a message using the form. There is no backend on this static site — in WordPress, point <code>action</code> to <code>admin-post.php</code>, a REST route, or a form plugin.
+            </p>
+          </header>
+
+          <div class="contact-card">
+            <!-- WordPress: replace <form> with do_shortcode( '[contact-form-7 ...]' ) or equivalent -->
+            <form class="contact-form" action="#" method="post" novalidate>
+              <input
+                type="text"
+                name="company_website"
+                value=""
+                class="contact-form__hp"
+                tabindex="-1"
+                autocomplete="off"
+                aria-hidden="true"
+              />
+
+              <div>
+                <label for="contact-name" class="contact-field-label">Name</label>
+                <input
+                  id="contact-name"
+                  name="your-name"
+                  type="text"
+                  required
+                  autocomplete="name"
+                  class="contact-field"
+                />
+              </div>
+
+              <div>
+                <label for="contact-email" class="contact-field-label">Email</label>
+                <input
+                  id="contact-email"
+                  name="your-email"
+                  type="email"
+                  required
+                  autocomplete="email"
+                  class="contact-field"
+                />
+              </div>
+
+              <div>
+                <label for="contact-phone" class="contact-field-label"
+                  >Phone <span class="optional">(optional)</span></label
+                >
+                <input id="contact-phone" name="your-phone" type="tel" autocomplete="tel" class="contact-field" />
+              </div>
+
+              <div>
+                <label for="contact-message" class="contact-field-label">Message</label>
+                <textarea
+                  id="contact-message"
+                  name="your-message"
+                  rows="5"
+                  required
+                  class="contact-field"
+                ></textarea>
+              </div>
+
+              <p class="contact-form__note">By submitting, you agree to our privacy policy (placeholder).</p>
+
+              <button type="submit" class="contact-form__submit">Send message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- WordPress: get_footer(); -->
+    <div id="site-include-footer"></div>
+
+    <script src="assets/js/site.js" defer></script>
+  </body>
+</html>

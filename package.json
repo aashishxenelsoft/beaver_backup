@@ -1,0 +1,15 @@
+{
+  "name": "beaver-energy",
+  "version": "1.0.0",
+  "description": "Static site structured for future WordPress theme conversion",
+  "private": true,
+  "scripts": {
+    "css:build": "node -e \"console.log('Styles are plain CSS in assets/css/style.css (no build).');\"",
+    "css:watch": "node -e \"console.log('Use your editor and live reload; Tailwind watch removed.'); process.exit(0);\"",
+    "css:min": "node -e \"console.log('Minify assets/css/style.css manually if needed.');\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
