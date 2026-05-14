@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Contact Beaver Energy — request information, partnership details, or a callback from our team."
+      content="Contact Beaver Energy — send us a message and our team will get back to you."
     />
     <title>Contact — Beaver Energy</title>
 
@@ -13,7 +13,7 @@
     <meta property="og:title" content="Contact — Beaver Energy" />
     <meta
       property="og:description"
-      content="Contact Beaver Energy — request information, partnership details, or a callback from our team."
+      content="Contact Beaver Energy — send us a message and our team will get back to you."
     />
     <meta property="og:image" content="assets/images/og-default.png" />
     <meta property="og:url" content="contact.html" />
@@ -30,89 +30,127 @@
   <body
     class="site-body"
     data-nav="contact"
+    data-footer-articles="false"
     data-include-header="includes/header.html"
     data-include-footer="includes/footer.html"
   >
-    <!-- WordPress: get_header(); -->
-    <div id="site-include-header"></div>
-
     <main id="site-main" class="site-main">
-      <!-- WordPress: page-contact.php — swap form for Contact Form 7 / WPForms shortcode or custom handler -->
-      <section class="contact-section" aria-labelledby="contact-heading">
-        <div class="contact-section__grid">
-          <header>
-            <h1 id="contact-heading" class="contact-section__title">Contact us</h1>
-            <p class="contact-section__intro">
-              Send a message using the form. There is no backend on this static site — in WordPress, point <code>action</code> to <code>admin-post.php</code>, a REST route, or a form plugin.
-            </p>
-          </header>
+      <div class="page-stack">
+        <div id="site-include-header"></div>
 
-          <div class="contact-card">
-            <!-- WordPress: replace <form> with do_shortcode( '[contact-form-7 ...]' ) or equivalent -->
-            <form class="contact-form" action="#" method="post" novalidate>
+        <div id="contact-hero-viewport" class="hero-layout">
+          <section class="hero-section hero-section--cover-centered" aria-labelledby="contact-hero-heading">
+            <img
+              src="assets/images/get_started.png"
+              alt="Beaver Energy — get in touch to start your journey"
+              width="1920"
+              height="1080"
+              class="hero-section__bg"
+              fetchpriority="high"
+              decoding="async"
+            />
+            <div class="hero-section__shade hero-section__shade--cover-centered" aria-hidden="true"></div>
+            <div class="hero-section__body hero-section__body--cover-centered">
+              <div class="site-container hero-section__cover-centered-inner">
+                <nav class="hero-breadcrumb-pill" aria-label="Breadcrumb">
+                  <a href="index.html">Home</a>
+                  <span class="hero-breadcrumb-pill__sep" aria-hidden="true">&gt;</span>
+                  <span class="hero-breadcrumb-pill__current" aria-current="page">Contact</span>
+                </nav>
+                <h1 id="contact-hero-heading" class="hero-cover-title">Get started</h1>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <section class="contact-message-page" aria-labelledby="contact-form-heading">
+          <div class="site-container contact-message-page__inner">
+            <h2 id="contact-form-heading" class="contact-message-page__title">
+              <span class="contact-message-page__title-muted">Send us a </span
+              ><span class="contact-message-page__title-accent">message</span>
+            </h2>
+
+            <form class="contact-message-form" action="#" method="post" novalidate>
               <input
                 type="text"
                 name="company_website"
                 value=""
-                class="contact-form__hp"
+                class="contact-message-form__hp"
                 tabindex="-1"
                 autocomplete="off"
                 aria-hidden="true"
               />
 
-              <div>
-                <label for="contact-name" class="contact-field-label">Name</label>
-                <input
-                  id="contact-name"
-                  name="your-name"
-                  type="text"
-                  required
-                  autocomplete="name"
-                  class="contact-field"
-                />
+              <div class="contact-message-form__row contact-message-form__row--2">
+                <div class="contact-message-field">
+                  <label class="contact-message-field__label" for="contact-first-name">First Name</label>
+                  <input
+                    id="contact-first-name"
+                    name="first-name"
+                    type="text"
+                    autocomplete="given-name"
+                    class="contact-message-field__input contact-message-field__input--line"
+                    required
+                  />
+                </div>
+                <div class="contact-message-field">
+                  <label class="contact-message-field__label" for="contact-last-name">Last Name</label>
+                  <input
+                    id="contact-last-name"
+                    name="last-name"
+                    type="text"
+                    autocomplete="family-name"
+                    class="contact-message-field__input contact-message-field__input--line"
+                    required
+                  />
+                </div>
               </div>
 
-              <div>
-                <label for="contact-email" class="contact-field-label">Email</label>
-                <input
-                  id="contact-email"
-                  name="your-email"
-                  type="email"
-                  required
-                  autocomplete="email"
-                  class="contact-field"
-                />
+              <div class="contact-message-form__row contact-message-form__row--2">
+                <div class="contact-message-field">
+                  <label class="contact-message-field__label" for="contact-email">Email Id</label>
+                  <input
+                    id="contact-email"
+                    name="your-email"
+                    type="email"
+                    autocomplete="email"
+                    class="contact-message-field__input contact-message-field__input--line"
+                    required
+                  />
+                </div>
+                <div class="contact-message-field">
+                  <label class="contact-message-field__label" for="contact-phone">Phone</label>
+                  <input
+                    id="contact-phone"
+                    name="your-phone"
+                    type="tel"
+                    autocomplete="tel"
+                    class="contact-message-field__input contact-message-field__input--line"
+                  />
+                </div>
               </div>
 
-              <div>
-                <label for="contact-phone" class="contact-field-label"
-                  >Phone <span class="optional">(optional)</span></label
-                >
-                <input id="contact-phone" name="your-phone" type="tel" autocomplete="tel" class="contact-field" />
-              </div>
-
-              <div>
-                <label for="contact-message" class="contact-field-label">Message</label>
+              <div class="contact-message-field contact-message-field--full">
+                <label class="contact-message-field__label" for="contact-message">Message</label>
                 <textarea
                   id="contact-message"
                   name="your-message"
-                  rows="5"
+                  rows="6"
                   required
-                  class="contact-field"
+                  class="contact-message-form__textarea"
                 ></textarea>
               </div>
 
-              <p class="contact-form__note">By submitting, you agree to our privacy policy (placeholder).</p>
-
-              <button type="submit" class="contact-form__submit">Send message</button>
+              <div class="contact-message-form__actions">
+                <button type="submit" class="contact-message-form__submit">Submit</button>
+              </div>
             </form>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
 
-    <!-- WordPress: get_footer(); -->
-    <div id="site-include-footer"></div>
+        <div id="site-include-footer"></div>
+      </div>
+    </main>
 
     <script src="assets/js/site.js" defer></script>
   </body>
