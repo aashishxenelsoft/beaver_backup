@@ -760,14 +760,18 @@ ol {
 /* About — mission | middle_image | vision */
 .about-mvv {
   position: relative;
-  z-index: 0;
-  padding: clamp(2rem, 5vw, 3.25rem) 0 clamp(2.5rem, 6vw, 4rem);
-  background: #eef1f4;
+  z-index: 3;
+  margin-top: clamp(-14.5rem, -29vw, -10rem);
+  padding: clamp(2rem, 5vw, 3rem) 0 clamp(2.5rem, 6vw, 4rem);
+  background: transparent;
   overflow: visible;
 }
 
 .about-mvv__inner {
+  position: relative;
+  z-index: 1;
   min-width: 0;
+  overflow: visible;
   padding-top: clamp(1.25rem, 3vw, 2rem);
 }
 
@@ -813,7 +817,7 @@ ol {
   margin: 0;
   padding: clamp(1.65rem, 3.8vw, 2.35rem);
   border: 0;
-  border-radius: 0.75rem;
+  border-radius: 0;
   background: #fff;
   box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);
   text-align: left;
@@ -880,13 +884,13 @@ ol {
 
 .about-mvv__media {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   margin: 0;
   width: 100%;
   min-width: 0;
   display: block;
   border-radius: 0.5rem;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 8px 24px rgb(0 0 0 / 0.16);
 }
 
@@ -900,6 +904,7 @@ ol {
     margin: 0;
     transform: translate(-50%, -50%);
     border-radius: 0.45rem;
+    overflow: hidden;
   }
 }
 
@@ -908,6 +913,7 @@ ol {
   width: 100%;
   height: clamp(12.5rem, 31vw, 16.5rem);
   min-height: clamp(12.5rem, 31vw, 16.5rem);
+  border-radius: inherit;
   object-fit: cover;
   object-position: center;
 }
@@ -925,10 +931,11 @@ ol {
 .middle_container {
   position: relative;
   z-index: 0;
-  background: #fff;
+  background: transparent;
   padding: clamp(2rem, 5vw, 3.5rem) 0;
   min-width: 0;
   margin-top: clamp(-1.5rem, -3vw, 0);
+  overflow: visible;
 }
 
 .middle_container__inner {
