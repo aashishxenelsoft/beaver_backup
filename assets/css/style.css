@@ -798,7 +798,7 @@ ol {
   .about-mvv__card--vision {
     grid-column: 2;
     grid-row: 1;
-    padding-left: clamp(4.25rem, 9.5vw, 6.5rem);
+    padding-left: clamp(6.25rem, 9.5vw, 6.5rem);
   }
 }
 
@@ -824,6 +824,7 @@ ol {
   width: clamp(2.35rem, 5.5vw, 3rem);
   height: auto;
   margin: 0 0 0.85rem;
+  padding-left: 1rem;
 }
 
 .about-mvv__heading {
@@ -832,6 +833,7 @@ ol {
   font-weight: 700;
   line-height: 1.25;
   color: #1a1a1a;
+  padding-left: 1rem;
 }
 
 .about-mvv__text {
@@ -841,6 +843,8 @@ ol {
   line-height: 1.55;
   color: #666;
   overflow-wrap: break-word;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
 .about-mvv__more {
@@ -851,6 +855,8 @@ ol {
   gap: 0.75rem;
   margin-top: auto;
   padding-top: 1.2rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
   font-size: clamp(9px, 0.65rem + 0.35vw, 10px);
   font-weight: 700;
   letter-spacing: 0.14em;
