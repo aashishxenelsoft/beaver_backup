@@ -1,157 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta
-      name="description"
-      content="Contact Beaver Energy — send us a message and our team will get back to you."
-    />
-    <title>Contact — Beaver Energy</title>
 
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Contact — Beaver Energy" />
-    <meta
-      property="og:description"
-      content="Contact Beaver Energy — send us a message and our team will get back to you."
-    />
-    <meta property="og:image" content="assets/images/og-default.png" />
-    <meta property="og:url" content="contact.html" />
-    <meta name="twitter:card" content="summary_large_image" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Contact Beaver Energy — send us a message and our team will get back to you." />
+  <title>Contact — Beaver Energy</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-  <body
-    class="site-body"
-    data-nav="contact"
-    data-footer-articles="false"
-    data-include-header="includes/header.html"
-    data-include-footer="includes/footer.html"
-  >
-    <main id="site-main" class="site-main">
-      <div class="page-stack">
-        <div id="site-include-header"></div>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact — Beaver Energy" />
+  <meta property="og:description"
+    content="Contact Beaver Energy — send us a message and our team will get back to you." />
+  <meta property="og:image" content="assets/images/og-default.png" />
+  <meta property="og:url" content="contact.html" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-        <div id="contact-hero-viewport" class="hero-layout">
-          <section class="hero-section hero-section--cover-centered" aria-labelledby="contact-hero-heading">
-            <img
-              src="assets/images/get_started.png"
-              alt="Beaver Energy — get in touch to start your journey"
-              width="1920"
-              height="1080"
-              class="hero-section__bg"
-              fetchpriority="high"
-              decoding="async"
-            />
-            <div class="hero-section__shade hero-section__shade--cover-centered" aria-hidden="true"></div>
-            <div class="hero-section__body hero-section__body--cover-centered">
-              <div class="site-container hero-section__cover-centered-inner">
-                <nav class="hero-breadcrumb-pill" aria-label="Breadcrumb">
-                  <a href="index.html">Home</a>
-                  <span class="hero-breadcrumb-pill__sep" aria-hidden="true">&gt;</span>
-                  <span class="hero-breadcrumb-pill__current" aria-current="page">Contact</span>
-                </nav>
-                <h1 id="contact-hero-heading" class="hero-cover-title">Get started</h1>
-              </div>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body class="site-body" data-nav="contact" data-footer-articles="false" data-include-header="includes/header.html"
+  data-include-footer="includes/footer.html">
+  <main id="site-main" class="site-main">
+    <div class="page-stack">
+      <div id="site-include-header"></div>
+
+      <div id="contact-hero-viewport" class="hero-layout">
+        <section class="hero-section hero-section--cover-centered" aria-labelledby="contact-hero-heading">
+          <img src="assets/images/get_started.png" alt="Beaver Energy — get in touch to start your journey" width="1920"
+            height="1080" class="hero-section__bg" fetchpriority="high" decoding="async" />
+          <div class="hero-section__shade hero-section__shade--cover-centered" aria-hidden="true"></div>
+          <div class="hero-section__body hero-section__body--cover-centered">
+            <div class="site-container hero-section__cover-centered-inner">
+              <nav class="hero-breadcrumb-pill" aria-label="Breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="hero-breadcrumb-pill__sep" aria-hidden="true">&gt;</span>
+                <span class="hero-breadcrumb-pill__current" aria-current="page">Contact</span>
+              </nav>
+              <h1 id="contact-hero-heading" class="hero-cover-title">Get started</h1>
             </div>
-          </section>
-        </div>
-
-        <section class="contact-message-page" aria-labelledby="contact-form-heading">
-          <div class="site-container contact-message-page__inner">
-            <h2 id="contact-form-heading" class="contact-message-page__title">
-              <span class="contact-message-page__title-muted">Send us a </span
-              ><span class="contact-message-page__title-accent">message</span>
-            </h2>
-
-            <form class="contact-message-form" action="#" method="post" novalidate>
-              <input
-                type="text"
-                name="company_website"
-                value=""
-                class="contact-message-form__hp"
-                tabindex="-1"
-                autocomplete="off"
-                aria-hidden="true"
-              />
-
-              <div class="contact-message-form__row contact-message-form__row--2">
-                <div class="contact-message-field">
-                  <label class="contact-message-field__label" for="contact-first-name">First Name</label>
-                  <input
-                    id="contact-first-name"
-                    name="first-name"
-                    type="text"
-                    autocomplete="given-name"
-                    class="contact-message-field__input contact-message-field__input--line"
-                    required
-                  />
-                </div>
-                <div class="contact-message-field">
-                  <label class="contact-message-field__label" for="contact-last-name">Last Name</label>
-                  <input
-                    id="contact-last-name"
-                    name="last-name"
-                    type="text"
-                    autocomplete="family-name"
-                    class="contact-message-field__input contact-message-field__input--line"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div class="contact-message-form__row contact-message-form__row--2">
-                <div class="contact-message-field">
-                  <label class="contact-message-field__label" for="contact-email">Email Id</label>
-                  <input
-                    id="contact-email"
-                    name="your-email"
-                    type="email"
-                    autocomplete="email"
-                    class="contact-message-field__input contact-message-field__input--line"
-                    required
-                  />
-                </div>
-                <div class="contact-message-field">
-                  <label class="contact-message-field__label" for="contact-phone">Phone</label>
-                  <input
-                    id="contact-phone"
-                    name="your-phone"
-                    type="tel"
-                    autocomplete="tel"
-                    class="contact-message-field__input contact-message-field__input--line"
-                  />
-                </div>
-              </div>
-
-              <div class="contact-message-field contact-message-field--full">
-                <label class="contact-message-field__label" for="contact-message">Message</label>
-                <textarea
-                  id="contact-message"
-                  name="your-message"
-                  rows="6"
-                  required
-                  class="contact-message-form__textarea"
-                ></textarea>
-              </div>
-
-              <div class="contact-message-form__actions">
-                <button type="submit" class="contact-message-form__submit">Submit</button>
-              </div>
-            </form>
           </div>
         </section>
-
-        <div id="site-include-footer"></div>
       </div>
-    </main>
 
-    <script src="assets/js/site.js" defer></script>
-  </body>
+      <section class="contact-message-page" aria-labelledby="contact-form-heading">
+        <div class="site-container contact-message-page__inner">
+          <h2 id="contact-form-heading" class="contact-message-page__title">
+            <span class="contact-message-page__title-muted">Send us a </span><span
+              class="contact-message-page__title-accent">message</span>
+          </h2>
+
+          <form class="contact-message-form" action="#" method="post" novalidate>
+            <input type="text" name="company_website" value="" class="contact-message-form__hp" tabindex="-1"
+              autocomplete="off" aria-hidden="true" />
+
+            <div class="contact-message-form__row contact-message-form__row--2">
+              <div class="contact-message-field">
+                <label class="contact-message-field__label" for="contact-first-name">First Name</label>
+                <input id="contact-first-name" name="first-name" type="text" autocomplete="given-name"
+                  class="contact-message-field__input contact-message-field__input--line" required />
+              </div>
+              <div class="contact-message-field">
+                <label class="contact-message-field__label" for="contact-last-name">Last Name</label>
+                <input id="contact-last-name" name="last-name" type="text" autocomplete="family-name"
+                  class="contact-message-field__input contact-message-field__input--line" required />
+              </div>
+            </div>
+
+            <div class="contact-message-form__row contact-message-form__row--2">
+              <div class="contact-message-field">
+                <label class="contact-message-field__label" for="contact-email">Email Id</label>
+                <input id="contact-email" name="your-email" type="email" autocomplete="email"
+                  class="contact-message-field__input contact-message-field__input--line" required />
+              </div>
+              <div class="contact-message-field">
+                <label class="contact-message-field__label" for="contact-phone">Phone</label>
+                <input id="contact-phone" name="your-phone" type="tel" autocomplete="tel"
+                  class="contact-message-field__input contact-message-field__input--line" />
+              </div>
+            </div>
+
+            <div class="contact-message-field contact-message-field--full">
+              <label class="contact-message-field__label" for="contact-message">Message</label>
+              <textarea id="contact-message" name="your-message" rows="6" required
+                class="contact-message-form__textarea"></textarea>
+            </div>
+
+            <div class="contact-message-form__actions">
+              <button type="submit" class="contact-message-form__submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <div id="site-include-footer"></div>
+    </div>
+  </main>
+
+  <script src="assets/js/site.js" defer></script>
+</body>
+
 </html>
