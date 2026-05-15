@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta
       name="description"
       content="Learn about Beaver Energy — our mission, team, and how we approach sustainable energy delivery."
@@ -15,7 +15,7 @@
       property="og:description"
       content="Learn about Beaver Energy — our mission, team, and how we approach sustainable energy delivery."
     />
-    <meta property="og:image" content="assets/images/og-default.png" />
+    <meta property="og:image" content="assets/images/about_us.png" />
     <meta property="og:url" content="about.html" />
     <meta name="twitter:card" content="summary_large_image" />
 
@@ -34,32 +34,196 @@
     data-include-header="includes/header.html"
     data-include-footer="includes/footer.html"
   >
-    <!-- WordPress: get_header(); -->
-    <div id="site-include-header"></div>
-<!-- here are three types of section and we do not recall them in here and also dont work with them here  -->
     <main id="site-main" class="site-main">
-      <!-- WordPress: page.php or page-about.php -->
-      <article class="about-article">
-        <div class="about-article__inner">
-          <header>
-            <h1 class="about-article__title">About Beaver Energy</h1>
-            <p class="about-article__eyebrow">Our story</p>
-          </header>
-          <div class="about-article__body">
-            <p>
-              This page demonstrates semantic structure you can lift into a WordPress <strong>Page</strong> template: one
-              <code>article</code>, a clear heading, and body copy blocks.
-            </p>
-            <p>
-              Replace this placeholder text with your mission, leadership bios, and timeline. In WordPress, prefer the block editor or reusable patterns so marketing can edit without touching PHP.
-            </p>
-          </div>
-        </div>
-      </article>
-    </main>
+      <div class="page-stack">
+        <div id="site-include-header"></div>
 
-    <!-- WordPress: get_footer(); -->
-    <div id="site-include-footer"></div>
+        <div id="about-hero-viewport" class="hero-layout">
+          <section class="hero-section hero-section--cover-centered" aria-labelledby="about-hero-heading">
+            <img
+              src="assets/images/about_us.png"
+              alt="About us — Beaver Energy team and mission"
+              width="1920"
+              height="1080"
+              class="hero-section__bg"
+              fetchpriority="high"
+              decoding="async"
+            />
+            <div class="hero-section__shade hero-section__shade--cover-centered" aria-hidden="true"></div>
+            <div class="hero-section__body hero-section__body--cover-centered">
+              <div class="site-container hero-section__cover-centered-inner">
+                <nav class="hero-breadcrumb-pill" aria-label="Breadcrumb">
+                  <a href="index.html">Home</a>
+                  <span class="hero-breadcrumb-pill__sep" aria-hidden="true">&gt;</span>
+                  <span class="hero-breadcrumb-pill__current" aria-current="page">About</span>
+                </nav>
+                <h1 id="about-hero-heading" class="hero-cover-title">About us</h1>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <section class="about-intro" aria-labelledby="about-intro-heading">
+          <div class="site-container about-intro__inner">
+            <div class="about-intro__layout">
+              <div class="about-intro__collage">
+                <div class="about-intro__col about-intro__col--left">
+                  <img
+                    class="about-intro__collage-img"
+                    src="assets/images/about_left.png"
+                    alt="Car wash and helmet cleaning with Beaver Energy machines"
+                    width="400"
+                    height="900"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div class="about-intro__col about-intro__col--right">
+                  <img
+                    class="about-intro__collage-img"
+                    src="assets/images/about_right.png"
+                    alt="Family at table and car mat cleaning"
+                    width="400"
+                    height="900"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+              <div class="about-intro__copy">
+                <p class="about-intro__badge">Powered by innovation</p>
+                <h2 id="about-intro-heading" class="about-intro__title">
+                  Advancing Everyday Services<br />
+                  <span class="about-intro__title-accent">Through Automation</span>
+                </h2>
+                <p class="about-intro__lede">
+                  Beaver Energy is a trusted automated solutions provider headquartered in Singapore. We deliver
+                  innovative self-service machines for modern environments.
+                </p>
+                <p class="about-intro__lede">
+                  Our machines offer various services ranging from serving fresh beverages to automobile cleaning. We
+                  design commercial-grade machines, specifically, Squeeze Me Apple Juice Machine, Beaver Helmet Cleaning
+                  Machine, Beaver Car Mat Cleaner Machine, and Beaver Car Wash Machine.
+                </p>
+                <p class="about-intro__cta-wrap">
+                  <a href="our-machines.html" class="hero-cta">Explore our machines</a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-us-bottom" role="region" aria-labelledby="about-tech-heading">
+            <img
+              class="about-us-bottom__img"
+              src="assets/images/about_page.png"
+              alt=""
+              width="1920"
+              height="1080"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="about-us-bottom__overlay">
+              <div class="site-container about-us-bottom__grid">
+                <div class="about-us-bottom__lead">
+                  <img
+                    class="about-us-bottom__tech-icon"
+                    src="assets/images/technology.png"
+                    alt=""
+                    width="64"
+                    height="64"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <h2 id="about-tech-heading" class="about-us-bottom__headline">Technology-Driven Growth</h2>
+                </div>
+                <div class="about-us-bottom__copy">
+                  <h3 class="about-us-bottom__title">
+                    Integrate Technology in Your Business with Future-Ready Systems
+                  </h3>
+                  <p class="about-us-bottom__p">
+                    Beyond offering smart services, Beaver Energy also supports entrepreneurs by supplying
+                    commercial-grade automated machines that operate 24/7 with minimal human assistance. We offer
+                    comprehensive support to our franchisees and purchasers to build a profitable business.
+                  </p>
+                  <p class="about-us-bottom__p">
+                    Start an automated machine business today to generate revenue 24/7 with low investment.
+                  </p>
+                  <p class="about-us-bottom__cta">
+                    <a href="contact.html" class="about-us-bottom__btn">Contact Us</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="about-mvv" aria-labelledby="about-mission-heading about-vision-heading">
+          <div class="site-container about-mvv__inner">
+            <div class="about-mvv__stage">
+              <article class="about-mvv__card about-mvv__card--mission">
+                <img
+                  class="about-mvv__icon"
+                  src="assets/images/our_mission.png"
+                  alt=""
+                  width="56"
+                  height="56"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <h2 id="about-mission-heading" class="about-mvv__heading">Our Mission</h2>
+                <p class="about-mvv__text">
+                  To enhance everyday services with innovative, reliable, and sustainable self-service solutions for
+                  convenience and efficiency.
+                </p>
+                <a class="about-mvv__more" href="our-machines.html">
+                  <span class="about-mvv__more-label">Explore more</span>
+                  <span class="about-mvv__more-arrow" aria-hidden="true">→</span>
+                </a>
+              </article>
+
+              <figure class="about-mvv__media">
+                <img
+                  class="about-mvv__middle-img"
+                  src="assets/images/middle_image.jpg"
+                  alt="Modern city skyline with glass towers and waterfront"
+                  width="800"
+                  height="1200"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </figure>
+
+              <article class="about-mvv__card about-mvv__card--vision">
+                <img
+                  class="about-mvv__icon"
+                  src="assets/images/our_vision.png"
+                  alt=""
+                  width="56"
+                  height="56"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <h2 id="about-vision-heading" class="about-mvv__heading">Our Vision</h2>
+                <p class="about-mvv__text">
+                  To be the global leader in self-service technology, driving industry standards, and inspiring trust
+                  through our commitment to quality, innovation, and sustainability.
+                </p>
+                <a class="about-mvv__more" href="our-machines.html">
+                  <span class="about-mvv__more-label">Explore more</span>
+                  <span class="about-mvv__more-arrow" aria-hidden="true">→</span>
+                </a>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="middle_container">
+          <div class="site-container middle_container__inner"></div>
+        </section>
+
+        <div id="site-include-footer"></div>
+      </div>
+    </main>
 
     <script src="assets/js/site.js" defer></script>
   </body>
