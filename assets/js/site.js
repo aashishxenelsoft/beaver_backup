@@ -45,6 +45,52 @@
     });
   }
 
+  function initMachineGallery() {
+    var gallery = document.querySelector("[data-machine-gallery]");
+    if (!gallery) return;
+
+    var main = gallery.querySelector("[data-gallery-main]");
+    var thumbs = gallery.querySelectorAll("[data-gallery-thumb]");
+    if (!main || !thumbs.length) return;
+
+    thumbs.forEach(function (thumb) {
+      thumb.addEventListener("click", function () {
+        var src = thumb.getAttribute("data-gallery-src");
+        if (!src) return;
+
+        main.src = src;
+        thumbs.forEach(function (t) {
+          var active = t === thumb;
+          t.classList.toggle("is-active", active);
+          t.setAttribute("aria-pressed", active ? "true" : "false");
+        });
+      });
+    });
+  }
+
+  function initMachineAccordion() {
+    var root = document.querySelector("[data-machine-accordion]");
+    if (!root) return;
+
+    function setItemOpen(item, open) {
+      var btn = item.querySelector(".machine-acc__trigger");
+      var panel = item.querySelector(".machine-acc__panel");
+      if (!btn || !panel) return;
+      item.classList.toggle("is-open", open);
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      if (open) panel.removeAttribute("hidden");
+      else panel.setAttribute("hidden", "");
+    }
+
+    root.querySelectorAll(".machine-acc").forEach(function (item) {
+      var btn = item.querySelector(".machine-acc__trigger");
+      if (!btn) return;
+      btn.addEventListener("click", function () {
+        setItemOpen(item, !item.classList.contains("is-open"));
+      });
+    });
+  }
+
   function initFranchiseFaq() {
     var root = document.querySelector("[data-franchise-faq]");
     if (!root) return;
@@ -114,6 +160,8 @@
 
     setActiveNav();
     initNavToggle();
+    initMachineGallery();
+    initMachineAccordion();
     initFranchiseFaq();
 
     var yearEl = document.getElementById("footer-year");
