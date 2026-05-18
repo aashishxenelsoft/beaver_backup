@@ -2679,45 +2679,80 @@ ol {
   }
 }
 
-/* Car wash machine page — breadcrumb scrolls away; left image sticky; right scrolls */
+/* Car wash — sticky left bg image; right content + about banner scroll */
+.machine-detail__layout--sticky-bg {
+  display: grid;
+  gap: clamp(1.5rem, 3.5vw, 2.5rem);
+  align-items: start;
+}
+
+.machine-detail__bg {
+  min-width: 0;
+  margin-top: -0.75rem;
+  margin-left: auto;
+  padding-left: clamp(0.75rem, 2.5vw, 2rem);
+}
+
+.machine-detail__bg-img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.machine-detail__content {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
 @media (min-width: 900px) {
   .machine-detail--sticky .machine-detail__inner,
-  .machine-detail--sticky .machine-detail__layout,
-  .machine-detail--sticky .machine-detail__media,
-  .machine-detail--sticky .machine-detail__scroll-col {
+  .machine-detail--sticky .machine-detail__layout--sticky-bg,
+  .machine-detail--sticky .machine-detail__bg,
+  .machine-detail--sticky .machine-detail__content {
     overflow: visible;
   }
 
-  .machine-detail--sticky .machine-detail__layout {
+  .machine-detail--sticky .machine-detail__layout--sticky-bg {
     grid-template-columns: minmax(0, 0.48fr) minmax(0, 0.52fr);
-    align-items: start;
+    gap: clamp(2rem, 4vw, 3.25rem);
   }
 
-  .machine-detail--sticky .machine-detail__media {
+  .machine-detail--sticky .machine-detail__bg {
+    grid-column: 1;
+    grid-row: 1;
     position: sticky;
     top: calc(var(--site-header-stack) + 0.75rem);
     align-self: start;
-    z-index: 2;
-    height: fit-content;
+    z-index: 0;
+    margin-top: -1.5rem;
+    padding-left: clamp(1.25rem, 3vw, 2.75rem);
   }
 
-  .machine-detail--sticky .machine-detail__media-pin {
-    position: static;
-  }
-
-  .machine-detail--sticky .machine-detail__img {
+  .machine-detail--sticky .machine-detail__bg-img {
     max-height: calc(100dvh - var(--site-header-stack) - 2rem);
     width: auto;
     max-width: 100%;
     margin-left: auto;
+    object-fit: contain;
+    object-position: center bottom;
   }
 
-  .machine-detail--sticky .machine-detail__scroll-col {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(1.5rem, 3vw, 2.5rem);
-    min-width: 0;
+  .machine-detail--sticky .machine-detail__content {
+    grid-column: 2;
+    grid-row: 1;
+    position: relative;
+    z-index: 1;
     min-height: calc(100dvh - var(--site-header-stack));
+  }
+
+  .machine-detail--sticky .machine-detail__content .machine-detail-banner.about-us-bottom {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw - clamp(2.5rem, 5.5vw, 5rem) - 7vw);
+    margin-right: calc(50% - 50vw + clamp(1.25rem, 3vw, 2.5rem) + 7vw);
   }
 }
 
@@ -3208,6 +3243,24 @@ ol {
   .machine-detail-banner.about-us-bottom {
     margin: 0;
     transform: none;
+  }
+}
+
+/* Car wash — nudge Business Opportunities / about_page block left */
+.machine-detail--sticky .machine-detail__content .machine-detail-banner.about-us-bottom {
+  transform: translateX(calc(clamp(-1.25rem, -3.5vw, -3.25rem) - 7vw));
+}
+
+.machine-detail-banner.about-us-bottom .about-us-bottom__img {
+  object-position: 21% center;
+}
+
+@media (max-width: 899px) {
+  .machine-detail--sticky .machine-detail__content .machine-detail-banner.about-us-bottom {
+    margin-left: calc(clamp(-1.5rem, -4vw, -1rem) - 7vw);
+    margin-right: clamp(-0.5rem, -1.5vw, 0);
+    width: calc(100% + clamp(1.5rem, 4vw, 2.5rem) + 7vw);
+    max-width: none;
   }
 }
 
