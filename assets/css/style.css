@@ -2899,11 +2899,11 @@ ol {
 }
 
 .machine-acc {
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #000;
 }
 
 .machine-acc:first-child {
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid #000;
 }
 
 .machine-acc__heading {
@@ -3124,7 +3124,7 @@ ol {
 
 /* How it works — 2×2 quad flow (helmet cleaner) */
 .machine-how--quad .machine-how__grid {
-  grid-template-columns: minmax(0, 1fr) minmax(1.75rem, 3.25rem) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(3.5rem, 6.5rem) minmax(0, 1fr);
 }
 
 .machine-how--quad .machine-how__step--1 {
@@ -3160,6 +3160,19 @@ ol {
 .machine-how--quad .machine-how__arrow--left {
   grid-column: 2;
   grid-row: 2;
+}
+
+.machine-how--quad .machine-how__arrow--right,
+.machine-how--quad .machine-how__arrow--left {
+  width: 100%;
+  min-width: 3.5rem;
+}
+
+.machine-how--quad .machine-how__arrow--right img,
+.machine-how--quad .machine-how__arrow--left img {
+  width: 5.25rem;
+  min-width: 3.5rem;
+  max-width: 6.5rem;
 }
 
 .machine-how--quad .machine-how__arrow--down {
