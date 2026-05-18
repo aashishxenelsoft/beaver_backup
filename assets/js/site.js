@@ -92,10 +92,10 @@
   }
 
   function initFranchiseFaq() {
-    var root = document.querySelector("[data-franchise-faq]");
-    if (!root) return;
+    var roots = document.querySelectorAll("[data-franchise-faq]");
+    if (!roots.length) return;
 
-    function setItemOpen(item, open) {
+    function setItemOpen(root, item, open) {
       var btn = item.querySelector(".franchise-faq-item__trigger");
       var panel = item.querySelector(".franchise-faq-item__panel");
       if (!btn || !panel) return;
@@ -105,17 +105,19 @@
       else panel.setAttribute("hidden", "");
     }
 
-    root.querySelectorAll(".franchise-faq-item").forEach(function (item) {
-      var btn = item.querySelector(".franchise-faq-item__trigger");
-      if (!btn) return;
-      btn.addEventListener("click", function () {
-        var willOpen = !item.classList.contains("is-open");
-        if (willOpen) {
-          root.querySelectorAll(".franchise-faq-item.is-open").forEach(function (openItem) {
-            if (openItem !== item) setItemOpen(openItem, false);
-          });
-        }
-        setItemOpen(item, willOpen);
+    roots.forEach(function (root) {
+      root.querySelectorAll(".franchise-faq-item").forEach(function (item) {
+        var btn = item.querySelector(".franchise-faq-item__trigger");
+        if (!btn) return;
+        btn.addEventListener("click", function () {
+          var willOpen = !item.classList.contains("is-open");
+          if (willOpen) {
+            root.querySelectorAll(".franchise-faq-item.is-open").forEach(function (openItem) {
+              if (openItem !== item) setItemOpen(root, openItem, false);
+            });
+          }
+          setItemOpen(root, item, willOpen);
+        });
       });
     });
   }

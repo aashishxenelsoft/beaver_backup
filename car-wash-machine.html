@@ -28,7 +28,7 @@
   <main id="site-main" class="site-main">
     <div class="page-stack">
       <div id="site-include-header"></div>
-      <section class="machine-detail" aria-labelledby="machine-detail-heading">
+      <section class="machine-detail machine-detail--sticky" aria-labelledby="machine-detail-heading">
         <div class="site-container machine-detail__inner">
           <nav class="machine-detail__breadcrumb" aria-label="Breadcrumb">
             <a class="machine-detail__back-link" href="our-machines.html">
@@ -45,184 +45,406 @@
 
           <div class="machine-detail__layout">
             <div class="machine-detail__media">
-              <img class="machine-detail__img" src="assets/images/car_wash_machine.png"
-                alt="Beaver Car Wash Machine — self-service unit with vacuum" width="800" height="900"
-                loading="lazy" decoding="async" />
+              <div class="machine-detail__media-pin">
+                <img class="machine-detail__img" src="assets/images/car_wash_machine.png"
+                  alt="Beaver Car Wash Machine — self-service unit with vacuum" width="800" height="900" loading="lazy"
+                  decoding="async" />
+              </div>
             </div>
 
-            <div class="machine-detail__main">
-              <p class="machine-detail__badge">Upgrade your business with an automatic car wash machine</p>
-              <h1 id="machine-detail-heading" class="machine-detail__page-title">Car wash machine</h1>
-
-              <div class="machine-detail__accordions" data-machine-accordion>
-                <div class="machine-acc is-open">
-                  <h2 class="machine-acc__heading">
-                    <button type="button" class="machine-acc__trigger" id="machine-acc-trigger-desc"
-                      aria-expanded="true" aria-controls="machine-acc-panel-desc">
-                      <span class="machine-acc__label">Description</span>
-                      <span class="machine-acc__icon" aria-hidden="true"></span>
-                    </button>
-                  </h2>
-                  <div class="machine-acc__panel" id="machine-acc-panel-desc" role="region"
-                    aria-labelledby="machine-acc-trigger-desc">
-                    <p class="machine-acc__text">
-                      Automatic car wash machines are designed for complete car wash in Singapore, including rinsing,
-                      cleaning, vacuuming, and drying. Our car wash machine includes professional equipment for both
-                      exterior and interior cleaning to provide a professional finish.
-                    </p>
+            <div class="machine-detail__scroll-col">
+              <div class="machine-detail__main">
+                <p class="machine-detail__badge">Upgrade your business with an automatic car wash machine</p>
+                <h1 id="machine-detail-heading" class="machine-detail__page-title">Car wash machine</h1>
+                <div class="machine-detail__accordions" data-machine-accordion>
+                  <div class="machine-acc is-open">
+                    <h2 class="machine-acc__heading">
+                      <button type="button" class="machine-acc__trigger" id="machine-acc-trigger-desc"
+                        aria-expanded="true" aria-controls="machine-acc-panel-desc">
+                        <span class="machine-acc__label">Description</span>
+                        <span class="machine-acc__icon" aria-hidden="true"></span>
+                      </button>
+                    </h2>
+                    <div class="machine-acc__panel" id="machine-acc-panel-desc" role="region"
+                      aria-labelledby="machine-acc-trigger-desc">
+                      <p class="machine-acc__text">
+                        Automatic car wash machines are designed for complete car wash in Singapore, including rinsing,
+                        cleaning, vacuuming, and drying. Our car wash machine includes professional equipment for both
+                        exterior and interior cleaning to provide a professional finish.
+                      </p>
+                    </div>
                   </div>
-                </div>
 
-                <div class="machine-acc is-open">
-                  <h2 class="machine-acc__heading">
-                    <button type="button" class="machine-acc__trigger" id="machine-acc-trigger-benefits"
-                      aria-expanded="true" aria-controls="machine-acc-panel-benefits">
-                      <span class="machine-acc__label">Benefits</span>
-                      <span class="machine-acc__icon" aria-hidden="true"></span>
-                    </button>
-                  </h2>
-                  <div class="machine-acc__panel" id="machine-acc-panel-benefits" role="region"
-                    aria-labelledby="machine-acc-trigger-benefits">
-                    <ul class="machine-benefits" role="list">
-                      <li class="machine-benefit">
-                        <span class="machine-benefit__icon">
-                          <img src="assets/images/benefit1.png" alt="" width="48" height="48" loading="lazy"
-                            decoding="async" />
-                        </span>
-                        <div class="machine-benefit__body">
-                          <h3 class="machine-benefit__title">Low staffing requirement</h3>
-                          <p class="machine-benefit__text">
-                            Automated car wash machines can operate with minimal human assistance, reducing labour
-                            costs.
-                          </p>
-                        </div>
-                      </li>
-                      <li class="machine-benefit">
-                        <span class="machine-benefit__icon">
-                          <img src="assets/images/benefit2.png" alt="" width="48" height="48" loading="lazy"
-                            decoding="async" />
-                        </span>
-                        <div class="machine-benefit__body">
-                          <h3 class="machine-benefit__title">Additional revenue stream</h3>
-                          <p class="machine-benefit__text">
-                            Car wash machines are designed to operate long hours, generating revenue 24/7.
-                          </p>
-                        </div>
-                      </li>
-                      <li class="machine-benefit">
-                        <span class="machine-benefit__icon">
-                          <img src="assets/images/benefit3.png" alt="" width="48" height="48" loading="lazy"
-                            decoding="async" />
-                        </span>
-                        <div class="machine-benefit__body">
-                          <h3 class="machine-benefit__title">Eco-friendly</h3>
-                          <p class="machine-benefit__text">
-                            Innovative water-saving technology conserves water, making it an environmentally responsible
-                            choice.
-                          </p>
-                        </div>
-                      </li>
-                      <li class="machine-benefit">
-                        <span class="machine-benefit__icon">
-                          <img src="assets/images/benefit4.png" alt="" width="48" height="48" loading="lazy"
-                            decoding="async" />
-                        </span>
-                        <div class="machine-benefit__body">
-                          <h3 class="machine-benefit__title">User-friendly</h3>
-                          <p class="machine-benefit__text">
-                            Clear instructions and simple controls guide users step-by-step through the auto car wash
-                            cycle, offering a user-friendly experience.
-                          </p>
-                        </div>
-                      </li>
-                    </ul>
+                  <div class="machine-acc is-open">
+                    <h2 class="machine-acc__heading">
+                      <button type="button" class="machine-acc__trigger" id="machine-acc-trigger-benefits"
+                        aria-expanded="true" aria-controls="machine-acc-panel-benefits">
+                        <span class="machine-acc__label">Benefits</span>
+                        <span class="machine-acc__icon" aria-hidden="true"></span>
+                      </button>
+                    </h2>
+                    <div class="machine-acc__panel" id="machine-acc-panel-benefits" role="region"
+                      aria-labelledby="machine-acc-trigger-benefits">
+                      <ul class="machine-benefits" role="list">
+                        <li class="machine-benefit">
+                          <span class="machine-benefit__icon">
+                            <img src="assets/images/benefit1.png" alt="" width="48" height="48" loading="lazy"
+                              decoding="async" />
+                          </span>
+                          <div class="machine-benefit__body">
+                            <h3 class="machine-benefit__title">Low staffing requirement</h3>
+                            <p class="machine-benefit__text">
+                              Automated car wash machines can operate with minimal human assistance, reducing labour
+                              costs.
+                            </p>
+                          </div>
+                        </li>
+                        <li class="machine-benefit">
+                          <span class="machine-benefit__icon">
+                            <img src="assets/images/benefit2.png" alt="" width="48" height="48" loading="lazy"
+                              decoding="async" />
+                          </span>
+                          <div class="machine-benefit__body">
+                            <h3 class="machine-benefit__title">Additional revenue stream</h3>
+                            <p class="machine-benefit__text">
+                              Car wash machines are designed to operate long hours, generating revenue 24/7.
+                            </p>
+                          </div>
+                        </li>
+                        <li class="machine-benefit">
+                          <span class="machine-benefit__icon">
+                            <img src="assets/images/benefit3.png" alt="" width="48" height="48" loading="lazy"
+                              decoding="async" />
+                          </span>
+                          <div class="machine-benefit__body">
+                            <h3 class="machine-benefit__title">Eco-friendly</h3>
+                            <p class="machine-benefit__text">
+                              Innovative water-saving technology conserves water, making it an environmentally
+                              responsible choice.
+                            </p>
+                          </div>
+                        </li>
+                        <li class="machine-benefit">
+                          <span class="machine-benefit__icon">
+                            <img src="assets/images/benefit4.png" alt="" width="48" height="48" loading="lazy"
+                              decoding="async" />
+                          </span>
+                          <div class="machine-benefit__body">
+                            <h3 class="machine-benefit__title">User-friendly</h3>
+                            <p class="machine-benefit__text">
+                              Clear instructions and simple controls guide users step-by-step through the auto car wash
+                              cycle, offering a user-friendly experience.
+                            </p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
-                </div>
 
-                <div class="machine-acc is-open">
-                  <h2 class="machine-acc__heading">
-                    <button type="button" class="machine-acc__trigger" id="machine-acc-trigger-how"
-                      aria-expanded="true" aria-controls="machine-acc-panel-how">
-                      <span class="machine-acc__label">How It Works</span>
-                      <span class="machine-acc__icon" aria-hidden="true"></span>
-                    </button>
-                  </h2>
-                  <div class="machine-acc__panel" id="machine-acc-panel-how" role="region"
-                    aria-labelledby="machine-acc-trigger-how">
-                    <div class="machine-how">
-                      <div class="machine-how__flow">
-                        <div class="machine-how__grid">
-                          <article class="machine-how__step machine-how__step--1">
-                            <img class="machine-how__icon" src="assets/images/work1.png" alt="" width="28"
-                              height="28" loading="lazy" decoding="async" />
-                            <p class="machine-how__text">
-                              Start your car wash at our automatic car wash machine by making a payment.
-                            </p>
-                          </article>
-                          <div class="machine-how__arrow machine-how__arrow--right" aria-hidden="true">
-                            <img src="assets/images/right_arrow.png" alt="" width="80" height="12" loading="lazy"
-                              decoding="async" />
-                          </div>
-                          <article class="machine-how__step machine-how__step--2">
-                            <img class="machine-how__icon" src="assets/images/work2.png" alt="" width="40"
-                              height="40" loading="lazy" decoding="async" />
-                            <p class="machine-how__text">Rinse your vehicle thoroughly with water.</p>
-                          </article>
-                          <div class="machine-how__arrow machine-how__arrow--right" aria-hidden="true">
-                            <img src="assets/images/right_arrow.png" alt="" width="80" height="12" loading="lazy"
-                              decoding="async" />
-                          </div>
-                          <article class="machine-how__step machine-how__step--3">
-                            <img class="machine-how__icon" src="assets/images/work3.png" alt="" width="40"
-                              height="40" loading="lazy" decoding="async" />
-                            <p class="machine-how__text">
-                              Apply automobile foam for vehicle exterior cleaning.
-                            </p>
-                          </article>
+                  <div class="machine-acc is-open">
+                    <h2 class="machine-acc__heading">
+                      <button type="button" class="machine-acc__trigger" id="machine-acc-trigger-how"
+                        aria-expanded="true" aria-controls="machine-acc-panel-how">
+                        <span class="machine-acc__label">How It Works</span>
+                        <span class="machine-acc__icon" aria-hidden="true"></span>
+                      </button>
+                    </h2>
+                    <div class="machine-acc__panel" id="machine-acc-panel-how" role="region"
+                      aria-labelledby="machine-acc-trigger-how">
+                      <div class="machine-how">
+                        <div class="machine-how__flow">
+                          <div class="machine-how__grid">
+                            <article class="machine-how__step machine-how__step--1">
+                              <img class="machine-how__icon" src="assets/images/work1.png" alt="" width="28" height="28"
+                                loading="lazy" decoding="async" />
+                              <p class="machine-how__text">
+                                Start your car wash at our automatic car wash machine by making a payment.
+                              </p>
+                            </article>
+                            <div class="machine-how__arrow machine-how__arrow--right" aria-hidden="true">
+                              <img src="assets/images/right_arrow.png" alt="" width="80" height="12" loading="lazy"
+                                decoding="async" />
+                            </div>
+                            <article class="machine-how__step machine-how__step--2">
+                              <img class="machine-how__icon" src="assets/images/work2.png" alt="" width="40" height="40"
+                                loading="lazy" decoding="async" />
+                              <p class="machine-how__text">Rinse your vehicle thoroughly with water.</p>
+                            </article>
+                            <div class="machine-how__arrow machine-how__arrow--right" aria-hidden="true">
+                              <img src="assets/images/right_arrow.png" alt="" width="80" height="12" loading="lazy"
+                                decoding="async" />
+                            </div>
+                            <article class="machine-how__step machine-how__step--3">
+                              <img class="machine-how__icon" src="assets/images/work3.png" alt="" width="40" height="40"
+                                loading="lazy" decoding="async" />
+                              <p class="machine-how__text">
+                                Apply automobile foam for vehicle exterior cleaning.
+                              </p>
+                            </article>
 
-                          <article class="machine-how__step machine-how__step--4">
-                            <img class="machine-how__icon" src="assets/images/work4.png" alt="" width="30"
-                              height="30" loading="lazy" decoding="async" />
-                            <p class="machine-how__text">
-                              Then, dry your vehicle using the high-powered blower.
-                            </p>
-                          </article>
-                          <div class="machine-how__arrow machine-how__arrow--right" aria-hidden="true">
-                            <img src="assets/images/right_arrow.png" alt="" width="80" height="12" loading="lazy"
+                            <article class="machine-how__step machine-how__step--4">
+                              <img class="machine-how__icon" src="assets/images/work4.png" alt="" width="30" height="30"
+                                loading="lazy" decoding="async" />
+                              <p class="machine-how__text">
+                                Then, dry your vehicle using the high-powered blower.
+                              </p>
+                            </article>
+                            <div class="machine-how__arrow machine-how__arrow--right" aria-hidden="true">
+                              <img src="assets/images/right_arrow.png" alt="" width="80" height="12" loading="lazy"
+                                decoding="async" />
+                            </div>
+                            <article class="machine-how__step machine-how__step--5">
+                              <img class="machine-how__icon" src="assets/images/work5.png" alt="" width="40" height="40"
+                                loading="lazy" decoding="async" />
+                              <p class="machine-how__text">
+                                Vacuum the vehicle interior to remove interior dust and debris.
+                              </p>
+                            </article>
+                            <div class="machine-how__arrow machine-how__arrow--right" aria-hidden="true">
+                              <img src="assets/images/right_arrow.png" alt="" width="80" height="12" loading="lazy"
+                                decoding="async" />
+                            </div>
+                            <article class="machine-how__step machine-how__step--6">
+                              <img class="machine-how__icon" src="assets/images/work6.png" alt="" width="40" height="40"
+                                loading="lazy" decoding="async" />
+                              <p class="machine-how__text">
+                                Wrap up by washing your hands or cloth at the washing bay.
+                              </p>
+                            </article>
+                          </div>
+                          <div class="machine-how__turn" aria-hidden="true">
+                            <img src="assets/images/round_arrow.png" alt="" width="120" height="160" loading="lazy"
                               decoding="async" />
                           </div>
-                          <article class="machine-how__step machine-how__step--5">
-                            <img class="machine-how__icon" src="assets/images/work5.png" alt="" width="40"
-                              height="40" loading="lazy" decoding="async" />
-                            <p class="machine-how__text">
-                              Vacuum the vehicle interior to remove interior dust and debris.
-                            </p>
-                          </article>
-                          <div class="machine-how__arrow machine-how__arrow--right" aria-hidden="true">
-                            <img src="assets/images/right_arrow.png" alt="" width="80" height="12" loading="lazy"
-                              decoding="async" />
-                          </div>
-                          <article class="machine-how__step machine-how__step--6">
-                            <img class="machine-how__icon" src="assets/images/work6.png" alt="" width="40"
-                              height="40" loading="lazy" decoding="async" />
-                            <p class="machine-how__text">
-                              Wrap up by washing your hands or cloth at the washing bay.
-                            </p>
-                          </article>
-                        </div>
-                        <div class="machine-how__turn" aria-hidden="true">
-                          <img src="assets/images/round_arrow.png" alt="" width="120" height="160" loading="lazy"
-                            decoding="async" />
                         </div>
                       </div>
                     </div>
                   </div>
+
+                  <div class="machine-acc is-open">
+                    <h2 class="machine-acc__heading">
+                      <button type="button" class="machine-acc__trigger" id="machine-acc-trigger-features"
+                        aria-expanded="true" aria-controls="machine-acc-panel-features">
+                        <span class="machine-acc__label">Smart Features</span>
+                        <span class="machine-acc__icon" aria-hidden="true"></span>
+                      </button>
+                    </h2>
+                    <div class="machine-acc__panel" id="machine-acc-panel-features" role="region"
+                      aria-labelledby="machine-acc-trigger-features">
+                      <ul class="machine-features" role="list">
+                        <li class="machine-feature">
+                          <span class="machine-feature__icon">
+                            <img src="assets/images/feature1.png" alt="" width="48" height="48" loading="lazy"
+                              decoding="async" />
+                          </span>
+                          <h3 class="machine-feature__title">Professional Equipment</h3>
+                          <p class="machine-feature__text">
+                            For exterior cleaning, high-pressure jet, automobile foam, and blower are included for
+                            rinsing, washing, and drying. For interior cleaning, a vacuum is included to clear interior
+                            dust and debris, providing professional vehicle care.
+                          </p>
+                        </li>
+                        <li class="machine-feature">
+                          <span class="machine-feature__icon">
+                            <img src="assets/images/feature2.png" alt="" width="48" height="48" loading="lazy"
+                              decoding="async" />
+                          </span>
+                          <h3 class="machine-feature__title">Automobile Cleaning Detergent</h3>
+                          <p class="machine-feature__text">
+                            Our car wash machines use commercial automobile cleaning detergent to maintain the quality
+                            of car paint and finish.
+                          </p>
+                        </li>
+                        <li class="machine-feature">
+                          <span class="machine-feature__icon">
+                            <img src="assets/images/feature3.png" alt="" width="48" height="48" loading="lazy"
+                              decoding="async" />
+                          </span>
+                          <h3 class="machine-feature__title">Pause &amp; Resume Function</h3>
+                          <p class="machine-feature__text">
+                            Pause and resume function is included for adjusting at any point during the wash, allowing
+                            users to wash their car at their own pace.
+                          </p>
+                        </li>
+                        <li class="machine-feature">
+                          <span class="machine-feature__icon">
+                            <img src="assets/images/feature4.png" alt="" width="48" height="48" loading="lazy"
+                              decoding="async" />
+                          </span>
+                          <h3 class="machine-feature__title">Cashless Payment System</h3>
+                          <p class="machine-feature__text">
+                            Convenient and secure cashless payment options are available to ensure a smooth car wash
+                            experience without complications.
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="machine-detail-banner about-us-bottom" role="region" aria-labelledby="machine-detail-banner-heading">
+        <img class="about-us-bottom__img" src="assets/images/about_page.png" alt="" width="1920" height="1080"
+          loading="lazy" decoding="async" />
+        <div class="about-us-bottom__overlay">
+          <div class="site-container about-us-bottom__grid">
+            <div class="about-us-bottom__lead">
+              <img class="about-us-bottom__tech-icon" src="assets/images/technology.png" alt="" width="64" height="64"
+                loading="lazy" decoding="async" />
+              <h2 id="machine-detail-banner-heading" class="about-us-bottom__headline">
+                Business<br />
+                Opportunities
+              </h2>
+            </div>
+            <div class="about-us-bottom__copy">
+              <h3 class="about-us-bottom__title">Start your own venture</h3>
+              <p class="about-us-bottom__p">
+                These days vehicle owners are aware of keeping their vehicles clean, but traditional vehicle washing
+                services are costly, making them less sustainable in the long term. Automatic car wash machines
+                introduce convenient and cost-effective solutions for vehicle owners. Since these automated car wash
+                machines can also be used as bike cleaning machines, strategically placing them at high-traffic
+                locations can maximize your benefits.
+              </p>
+              <p class="about-us-bottom__p">
+                HDB car park washing machines, office building car park washing machines, and industrial car wash
+                machines are some popular installation locations because of their high traffic nature and consistent
+                demand.
+              </p>
+              <p class="about-us-bottom__p">
+                Whether you are starting a self-service car wash machine business or upgrading your existing car wash
+                business, selecting the right equipment and supplier enhances efficiency. By choosing Beaver Energy as
+                your partner, you will have proven technology, comprehensive support, location recommendation, and a
+                concept that&apos;s already trusted by vehicle owners.
+              </p>
+              <p class="about-us-bottom__cta">
+                <a href="contact.html" class="about-us-bottom__btn">Contact Us</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <section class="franchise-faq" aria-labelledby="machine-faq-heading">
+        <div class="site-container franchise-faq__inner">
+          <h2 id="machine-faq-heading" class="franchise-faq__title">
+            <span class="franchise-faq__title-muted">Frequently Asked</span><span class="franchise-faq__title-accent">
+              Questions</span>
+          </h2>
+
+          <div class="franchise-faq__list" data-franchise-faq>
+            <div class="franchise-faq-item">
+              <h3 class="franchise-faq-item__heading">
+                <button type="button" class="franchise-faq-item__trigger" id="machine-faq-trigger-1"
+                  aria-expanded="false" aria-controls="machine-faq-panel-1">
+                  <span class="franchise-faq-item__question">How can I get a quote for advertising?</span>
+                  <span class="franchise-faq-item__chevron" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="franchise-faq-item__panel" id="machine-faq-panel-1" role="region"
+                aria-labelledby="machine-faq-trigger-1" hidden>
+                <p class="franchise-faq-item__answer">
+                  Contact our team with your location and campaign goals. We will share advertising options, placement
+                  details, and a tailored quote for promoting your car wash machine on-site or across our network.
+                </p>
+              </div>
+            </div>
+
+            <div class="franchise-faq-item is-open">
+              <h3 class="franchise-faq-item__heading">
+                <button type="button" class="franchise-faq-item__trigger" id="machine-faq-trigger-2"
+                  aria-expanded="true" aria-controls="machine-faq-panel-2">
+                  <span class="franchise-faq-item__question">Is it suitable for all types of vehicles?</span>
+                  <span class="franchise-faq-item__chevron" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="franchise-faq-item__panel" id="machine-faq-panel-2" role="region"
+                aria-labelledby="machine-faq-trigger-2">
+                <p class="franchise-faq-item__answer">
+                  Yes, the system is designed to accommodate a wide range of vehicle types, including cars, trucks, SUVs,
+                  and vans. Its adjustable settings ensure a safe and effective cleaning process for different sizes and
+                  styles of vehicles.
+                </p>
+              </div>
+            </div>
+
+            <div class="franchise-faq-item">
+              <h3 class="franchise-faq-item__heading">
+                <button type="button" class="franchise-faq-item__trigger" id="machine-faq-trigger-3"
+                  aria-expanded="false" aria-controls="machine-faq-panel-3">
+                  <span class="franchise-faq-item__question">Is the cleaning process safe for vehicle paint and
+                    finish?</span>
+                  <span class="franchise-faq-item__chevron" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="franchise-faq-item__panel" id="machine-faq-panel-3" role="region"
+                aria-labelledby="machine-faq-trigger-3" hidden>
+                <p class="franchise-faq-item__answer">
+                  Yes. Our machines use commercial automobile cleaning detergent and controlled wash cycles designed to
+                  protect paint and finish while delivering a thorough clean for both exterior and interior care.
+                </p>
+              </div>
+            </div>
+
+            <div class="franchise-faq-item">
+              <h3 class="franchise-faq-item__heading">
+                <button type="button" class="franchise-faq-item__trigger" id="machine-faq-trigger-4"
+                  aria-expanded="false" aria-controls="machine-faq-panel-4">
+                  <span class="franchise-faq-item__question">Where are the units located in Singapore?</span>
+                  <span class="franchise-faq-item__chevron" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="franchise-faq-item__panel" id="machine-faq-panel-4" role="region"
+                aria-labelledby="machine-faq-trigger-4" hidden>
+                <p class="franchise-faq-item__answer">
+                  Beaver Energy car wash machines are installed at high-traffic sites such as HDB car parks, office
+                  buildings, and industrial locations across Singapore. Contact us for the nearest unit or partnership
+                  opportunities in your area.
+                </p>
+              </div>
+            </div>
+
+            <div class="franchise-faq-item">
+              <h3 class="franchise-faq-item__heading">
+                <button type="button" class="franchise-faq-item__trigger" id="machine-faq-trigger-5"
+                  aria-expanded="false" aria-controls="machine-faq-panel-5">
+                  <span class="franchise-faq-item__question">Can I pause the car wash if needed?</span>
+                  <span class="franchise-faq-item__chevron" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="franchise-faq-item__panel" id="machine-faq-panel-5" role="region"
+                aria-labelledby="machine-faq-trigger-5" hidden>
+                <p class="franchise-faq-item__answer">
+                  Yes. The machine includes a pause and resume function so you can adjust at any point during the wash
+                  and continue at your own pace when you are ready.
+                </p>
+              </div>
+            </div>
+
+            <div class="franchise-faq-item">
+              <h3 class="franchise-faq-item__heading">
+                <button type="button" class="franchise-faq-item__trigger" id="machine-faq-trigger-6"
+                  aria-expanded="false" aria-controls="machine-faq-panel-6">
+                  <span class="franchise-faq-item__question">What payment methods can I use?</span>
+                  <span class="franchise-faq-item__chevron" aria-hidden="true"></span>
+                </button>
+              </h3>
+              <div class="franchise-faq-item__panel" id="machine-faq-panel-6" role="region"
+                aria-labelledby="machine-faq-trigger-6" hidden>
+                <p class="franchise-faq-item__answer">
+                  Convenient and secure cashless payment options are available at the machine, so you can start your wash
+                  quickly without complications.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
+
 
       <div id="site-include-footer"></div>
     </div>

@@ -2675,7 +2675,58 @@ ol {
   .machine-detail__layout {
     grid-template-columns: minmax(0, 0.48fr) minmax(0, 0.52fr);
     gap: clamp(2rem, 4vw, 3.25rem);
+    align-items: start;
   }
+}
+
+/* Car wash machine page — breadcrumb scrolls away; left image sticky; right scrolls */
+@media (min-width: 900px) {
+  .machine-detail--sticky .machine-detail__inner,
+  .machine-detail--sticky .machine-detail__layout,
+  .machine-detail--sticky .machine-detail__media,
+  .machine-detail--sticky .machine-detail__scroll-col {
+    overflow: visible;
+  }
+
+  .machine-detail--sticky .machine-detail__layout {
+    grid-template-columns: minmax(0, 0.48fr) minmax(0, 0.52fr);
+    align-items: start;
+  }
+
+  .machine-detail--sticky .machine-detail__media {
+    position: sticky;
+    top: calc(var(--site-header-stack) + 0.75rem);
+    align-self: start;
+    z-index: 2;
+    height: fit-content;
+  }
+
+  .machine-detail--sticky .machine-detail__media-pin {
+    position: static;
+  }
+
+  .machine-detail--sticky .machine-detail__img {
+    max-height: calc(100dvh - var(--site-header-stack) - 2rem);
+    width: auto;
+    max-width: 100%;
+    margin-left: auto;
+  }
+
+  .machine-detail--sticky .machine-detail__scroll-col {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+    min-width: 0;
+    min-height: calc(100dvh - var(--site-header-stack));
+  }
+}
+
+.machine-detail__scroll-col {
+  min-width: 0;
+}
+
+.machine-detail__scroll-extra {
+  min-width: 0;
 }
 
 .machine-detail__media {
@@ -3081,6 +3132,82 @@ ol {
 
   .machine-how__text {
     max-width: none;
+  }
+}
+
+/* Smart features — 2×2 grid */
+.machine-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+@media (min-width: 640px) {
+  .machine-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(1.25rem, 3vw, 2rem);
+    row-gap: clamp(1.35rem, 2.5vw, 1.85rem);
+  }
+}
+
+.machine-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.machine-feature__icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 2.5rem;
+}
+
+.machine-feature__icon img {
+  display: block;
+  width: 2.35rem;
+  height: 2.35rem;
+  object-fit: contain;
+}
+
+.machine-feature__title {
+  margin: 0;
+  font-size: clamp(0.8125rem, 1.2vw, 0.9rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--color-brand);
+}
+
+.machine-feature__text {
+  margin: 0;
+  font-size: clamp(0.75rem, 1.1vw, 0.85rem);
+  line-height: 1.55;
+  color: #52525b;
+}
+
+/* Car wash machine — full-width banner (reuses about-us-bottom) */
+.machine-detail-banner.about-us-bottom {
+  margin: 0;
+  transform: none;
+  pointer-events: auto;
+}
+
+@media (min-width: 640px) {
+  .machine-detail-banner.about-us-bottom {
+    margin: 0;
+    transform: none;
+  }
+}
+
+@media (min-width: 900px) {
+  .machine-detail-banner.about-us-bottom {
+    margin: 0;
+    transform: none;
   }
 }
 
