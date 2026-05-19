@@ -72,17 +72,30 @@
     var root = document.querySelector("[data-machine-accordion]");
     if (!root) return;
 
+    root.querySelectorAll(".machine-acc__panel").forEach(function (panel) {
+      if (panel.querySelector(".machine-acc__panel-inner")) return;
+      var inner = document.createElement("div");
+      inner.className = "machine-acc__panel-inner";
+      while (panel.firstChild) {
+        inner.appendChild(panel.firstChild);
+      }
+      panel.appendChild(inner);
+    });
+
     function setItemOpen(item, open) {
       var btn = item.querySelector(".machine-acc__trigger");
       var panel = item.querySelector(".machine-acc__panel");
       if (!btn || !panel) return;
       item.classList.toggle("is-open", open);
       btn.setAttribute("aria-expanded", open ? "true" : "false");
-      if (open) panel.removeAttribute("hidden");
-      else panel.setAttribute("hidden", "");
+      panel.setAttribute("aria-hidden", open ? "false" : "true");
+      panel.removeAttribute("hidden");
     }
 
     root.querySelectorAll(".machine-acc").forEach(function (item) {
+      var isOpen = item.classList.contains("is-open");
+      setItemOpen(item, isOpen);
+
       var btn = item.querySelector(".machine-acc__trigger");
       if (!btn) return;
       btn.addEventListener("click", function () {
@@ -95,17 +108,21 @@
     var roots = document.querySelectorAll("[data-franchise-faq]");
     if (!roots.length) return;
 
-    function setItemOpen(root, item, open) {
+    function setItemOpen(item, open) {
       var btn = item.querySelector(".franchise-faq-item__trigger");
       var panel = item.querySelector(".franchise-faq-item__panel");
       if (!btn || !panel) return;
       item.classList.toggle("is-open", open);
       btn.setAttribute("aria-expanded", open ? "true" : "false");
-      if (open) panel.removeAttribute("hidden");
-      else panel.setAttribute("hidden", "");
+      panel.setAttribute("aria-hidden", open ? "false" : "true");
+      panel.removeAttribute("hidden");
     }
 
     roots.forEach(function (root) {
+      root.querySelectorAll(".franchise-faq-item").forEach(function (item) {
+        setItemOpen(item, false);
+      });
+
       root.querySelectorAll(".franchise-faq-item").forEach(function (item) {
         var btn = item.querySelector(".franchise-faq-item__trigger");
         if (!btn) return;
@@ -113,10 +130,10 @@
           var willOpen = !item.classList.contains("is-open");
           if (willOpen) {
             root.querySelectorAll(".franchise-faq-item.is-open").forEach(function (openItem) {
-              if (openItem !== item) setItemOpen(root, openItem, false);
+              if (openItem !== item) setItemOpen(openItem, false);
             });
           }
-          setItemOpen(root, item, willOpen);
+          setItemOpen(item, willOpen);
         });
       });
     });
