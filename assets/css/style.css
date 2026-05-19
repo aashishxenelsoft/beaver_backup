@@ -18,7 +18,8 @@
   --color-slate-500: #64748b;
   --color-slate-600: #475569;
   --color-slate-900: #0f172a;
-  --color-brand: #0056b3;
+  --color-brand: #0A4AA3;
+  --color-brand-red: #BD090E;
   --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-nav: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
@@ -842,13 +843,11 @@ ol {
   .about-mvv__card--mission {
     grid-column: 1;
     grid-row: 1;
-    padding-right: clamp(4.25rem, 9.5vw, 6.5rem);
   }
 
   .about-mvv__card--vision {
     grid-column: 2;
     grid-row: 1;
-    padding-left: clamp(6.25rem, 9.5vw, 6.5rem);
   }
 }
 
@@ -867,6 +866,16 @@ ol {
   background: #fff;
   box-shadow: 0 4px 15px rgb(0 0 0 / 0.1);
   text-align: left;
+}
+
+@media (min-width: 900px) {
+  .about-mvv__card.about-mvv__card--mission {
+    padding-right: clamp(4.75rem, 10vw, 7rem);
+  }
+
+  .about-mvv__card.about-mvv__card--vision {
+    padding-left: clamp(6.25rem, 9.5vw, 6.5rem);
+  }
 }
 
 .about-mvv__icon {
@@ -1271,10 +1280,8 @@ ol {
     padding: clamp(1.25rem, 4.5vw, 1.75rem);
   }
 
-  .about-mvv__card--mission,
-  .about-mvv__card--vision {
-    padding-right: clamp(1.25rem, 4.5vw, 1.75rem);
-    padding-left: clamp(1.25rem, 4.5vw, 1.75rem);
+  .about-mvv__card.about-mvv__card--mission {
+    padding-right: clamp(1.5rem, 4.75vw, 2.1rem);
   }
 
   .about-mvv__media {
@@ -1294,11 +1301,11 @@ ol {
     column-gap: clamp(3.25rem, 7vw, 5.5rem);
   }
 
-  .about-mvv__card--mission {
-    padding-right: clamp(3.25rem, 7.5vw, 5rem);
+  .about-mvv__card.about-mvv__card--mission {
+    padding-right: clamp(4rem, 8.25vw, 5.75rem);
   }
 
-  .about-mvv__card--vision {
+  .about-mvv__card.about-mvv__card--vision {
     padding-left: clamp(4.75rem, 8vw, 5.75rem);
   }
 
@@ -1640,7 +1647,7 @@ ol {
   text-transform: uppercase;
   color: #fff;
   text-decoration: none;
-  box-shadow: 0 8px 20px -8px rgb(0 86 179 / 0.4);
+  box-shadow: 0 8px 20px -8px rgb(10 74 163 / 0.4);
   transition: opacity 0.15s ease;
 }
 
@@ -2157,7 +2164,7 @@ ol {
 .contact-message-form__textarea:focus {
   outline: none;
   border-color: var(--color-brand);
-  box-shadow: 0 0 0 2px rgb(0 86 179 / 0.15);
+  box-shadow: 0 0 0 2px rgb(10 74 163 / 0.15);
 }
 
 .contact-message-form__actions {
@@ -2182,7 +2189,7 @@ ol {
   text-transform: uppercase;
   color: #fff;
   cursor: pointer;
-  box-shadow: 0 6px 18px -6px rgb(0 86 179 / 0.45);
+  box-shadow: 0 6px 18px -6px rgb(10 74 163 / 0.45);
   transition: opacity 0.15s ease;
 }
 
@@ -2376,7 +2383,7 @@ ol {
   justify-content: center;
   margin-bottom: 0.65rem;
   border-radius: 0.45rem;
-  background: rgb(0 86 179 / 0.12);
+  background: rgb(10 74 163 / 0.12);
   overflow: hidden;
 }
 
@@ -2818,7 +2825,7 @@ ol {
 }
 
 .machine-detail__thumb:hover {
-  border-color: rgb(0 86 179 / 0.35);
+  border-color: rgb(10 74 163 / 0.35);
 }
 
 .machine-detail__thumb.is-active {
@@ -3632,13 +3639,13 @@ ol {
   text-transform: uppercase;
   color: #fff;
   text-decoration: none;
-  box-shadow: 0 10px 22px -8px rgb(0 86 179 / 0.45), 0 4px 10px -6px rgb(15 23 42 / 0.18);
+  box-shadow: 0 10px 22px -8px rgb(10 74 163 / 0.45), 0 4px 10px -6px rgb(15 23 42 / 0.18);
   transition: opacity 0.15s ease, box-shadow 0.15s ease;
 }
 
 .franchise-why__cta:hover {
   opacity: 0.96;
-  box-shadow: 0 12px 26px -8px rgb(0 86 179 / 0.4), 0 5px 12px -6px rgb(15 23 42 / 0.16);
+  box-shadow: 0 12px 26px -8px rgb(10 74 163 / 0.4), 0 5px 12px -6px rgb(15 23 42 / 0.16);
 }
 
 .franchise-why__cards {
@@ -3848,4 +3855,49 @@ ol {
 .latest-articles__thumb {
   max-width: 100%;
   height: auto;
+}
+
+/* Apple juice machine — red accent + gallery layout */
+.machine-detail--juice {
+  --machine-accent: var(--color-brand-red);
+}
+
+.machine-detail--juice .machine-detail__breadcrumb a:not(.machine-detail__back-link),
+.machine-detail--juice .machine-detail__page-title,
+.machine-detail--juice .machine-acc__label,
+.machine-detail--juice .machine-benefit__title,
+.machine-detail--juice .machine-feature__title {
+  color: var(--machine-accent);
+}
+
+.machine-detail--juice .machine-detail__badge {
+  background: var(--machine-accent);
+}
+
+.machine-detail--juice .machine-acc__trigger:focus-visible {
+  outline-color: var(--machine-accent);
+}
+
+.machine-detail--juice .machine-acc__icon::before,
+.machine-detail--juice .machine-acc__icon::after {
+  background: var(--machine-accent);
+}
+
+.machine-detail--juice .machine-detail__back-link img {
+  filter: brightness(0) saturate(100%) invert(14%) sepia(95%) saturate(7023%) hue-rotate(353deg) brightness(93%)
+    contrast(95%);
+}
+
+.franchise-faq--juice .franchise-faq__title-accent,
+.franchise-faq--juice .franchise-faq-item__chevron {
+  color: var(--color-brand-red);
+  border-color: var(--color-brand-red);
+}
+
+.franchise-faq--juice .franchise-faq-item.is-open .franchise-faq-item__trigger {
+  color: var(--color-brand-red);
+}
+
+.franchise-faq--juice .franchise-faq-item__trigger:focus-visible {
+  outline-color: var(--color-brand-red);
 }
