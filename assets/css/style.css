@@ -1,13 +1,7 @@
-/**
- * Beaver Energy — plain CSS (no Tailwind).
- * Content width scales up on large desktops (--site-max); gutters stay proportional (--site-px).
- */
 
 :root {
   --site-max: 1200px;
-  /* Sticky header row + iOS safe-area so dropdown + hero heights match the real chrome. */
   --site-header-stack: calc(4.5rem + env(safe-area-inset-top, 0px));
-  /* Tighter gutters on phones; 640px+ matches original scale (laptop unchanged from 1024px up). */
   --site-px: clamp(0.875rem, 4.2vw, 1.35rem);
   --color-gray-100: #f3f4f6;
   --color-gray-200: #e5e7eb;
@@ -86,7 +80,7 @@
 html {
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
-  /* clip avoids horizontal bleed without turning the root into a scroll container that breaks position:sticky */
+
   overflow-x: clip;
   scroll-padding-top: var(--site-header-stack);
 }
@@ -144,10 +138,6 @@ ol {
   padding: 0;
 }
 
-/* -------------------------------------------------------------------------- */
-/* Base layout                                                                */
-/* -------------------------------------------------------------------------- */
-
 .site-body {
   min-height: 100vh;
   min-height: 100dvh;
@@ -188,10 +178,6 @@ ol {
   padding-right: var(--site-px);
 }
 
-/* -------------------------------------------------------------------------- */
-/* Skip link                                                                  */
-/* -------------------------------------------------------------------------- */
-
 .skip-link {
   position: absolute;
   left: 1rem;
@@ -213,10 +199,6 @@ ol {
   outline: 2px solid #fff;
   outline-offset: 2px;
 }
-
-/* -------------------------------------------------------------------------- */
-/* Site header                                                                */
-/* -------------------------------------------------------------------------- */
 
 .site-header {
   position: sticky;
@@ -510,10 +492,6 @@ ol {
   }
 }
 
-/* -------------------------------------------------------------------------- */
-/* Home hero                                                                  */
-/* -------------------------------------------------------------------------- */
-
 .hero-layout {
   display: flex;
   min-height: 100vh;
@@ -648,10 +626,6 @@ ol {
   }
 }
 
-/* -------------------------------------------------------------------------- */
-/* About — intro (collage + copy), then middle_container                        */
-/* -------------------------------------------------------------------------- */
-
 .about-intro {
   position: relative;
   z-index: 2;
@@ -785,7 +759,6 @@ ol {
   margin: clamp(1.1rem, 2.5vw, 1.5rem) 0 0;
 }
 
-/* About — mission | middle_image | vision */
 .about-mvv {
   --about-mvv-pull: clamp(-1rem, -3.5vw, 0);
   position: relative;
@@ -975,8 +948,6 @@ ol {
   }
 }
 
-/* About — middle band (below intro) */
-
 .middle_container {
   position: relative;
   z-index: 0;
@@ -992,7 +963,6 @@ ol {
   min-height: 0;
 }
 
-/* About page banner: under intro; pull up with margin + translate (margin collapse safe) */
 .about-us-bottom {
   box-sizing: border-box;
   position: relative;
@@ -1155,7 +1125,6 @@ ol {
   }
 }
 
-/* About page — responsive (mobile / tablet) */
 @media (max-width: 479px) {
   .about-intro__collage {
     gap: 0.5rem;
@@ -1175,10 +1144,22 @@ ol {
     min-height: clamp(11.5rem, 44vw, 16rem);
   }
 
+  .machine-detail--sticky .machine-detail-banner.about-us-bottom .about-us-bottom__img {
+    min-height: clamp(7.5rem, 30vw, 10.5rem);
+    max-height: clamp(9rem, 36vw, 12.5rem);
+    height: clamp(7.5rem, 30vw, 10.5rem);
+  }
+
   .about-us-bottom__overlay {
     align-items: flex-start;
     padding-top: clamp(2.5rem, 10vw, 3.5rem);
     padding-bottom: clamp(0.5rem, 2vw, 0.75rem);
+  }
+
+  .machine-detail--sticky .machine-detail-banner.about-us-bottom .about-us-bottom__overlay {
+    align-items: stretch;
+    padding-top: clamp(1rem, 3.5vw, 1.35rem);
+    padding-bottom: clamp(1rem, 3.5vw, 1.35rem);
   }
 
   .about-us-bottom__grid {
@@ -1230,9 +1211,20 @@ ol {
     min-height: clamp(10rem, 40vw, 13.5rem);
   }
 
+  .machine-detail--sticky .machine-detail-banner.about-us-bottom .about-us-bottom__img {
+    min-height: clamp(6.5rem, 28vw, 9rem);
+    max-height: clamp(7.5rem, 32vw, 10rem);
+    height: clamp(6.5rem, 28vw, 9rem);
+  }
+
   .about-us-bottom__overlay {
     padding-top: clamp(2.85rem, 12vw, 4rem);
     padding-bottom: clamp(0.4rem, 1.5vw, 0.65rem);
+  }
+
+  .machine-detail--sticky .machine-detail-banner.about-us-bottom .about-us-bottom__overlay {
+    padding-top: clamp(0.85rem, 3.5vw, 1.1rem);
+    padding-bottom: clamp(0.85rem, 3.5vw, 1.1rem);
   }
 
   .about-us-bottom__grid {
@@ -1321,7 +1313,6 @@ ol {
   }
 }
 
-/* Hero — blog post cover (left text, same short viewport height as machines) */
 .hero-section__shade--blog-post {
   background: linear-gradient(to right,
       rgb(0 0 0 / 0.82),
@@ -1340,7 +1331,7 @@ ol {
 .hero-section__blog-post-inner {
   display: flex;
   width: 100%;
-  /* Width/padding: .site-container (same horizontal gutter as .site-header__inner) */
+
   min-width: 0;
   box-sizing: border-box;
   flex-direction: column;
@@ -1403,7 +1394,6 @@ ol {
   display: block;
 }
 
-/* Keep “…Commercial Apple” on one line; second phrase on the next */
 .hero-blog-title__line--1 {
   white-space: nowrap;
 }
@@ -1461,10 +1451,6 @@ ol {
     margin-top: 1rem;
   }
 }
-
-/* -------------------------------------------------------------------------- */
-/* Blog — Explore grid                                                        */
-/* -------------------------------------------------------------------------- */
 
 .blog-explore {
   padding: clamp(2rem, 4vw, 3rem) 0 clamp(2.5rem, 5vw, 4rem);
@@ -1672,6 +1658,304 @@ ol {
   }
 }
 
+.blog-detail {
+  padding: clamp(1.5rem, 3.5vw, 2.5rem) 0 clamp(2.5rem, 5vw, 4rem);
+  background: #fff;
+}
+
+.blog-detail__inner {
+  min-width: 0;
+}
+
+.blog-detail__layout {
+  display: grid;
+  gap: clamp(2rem, 4vw, 3rem);
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .blog-detail__layout {
+    grid-template-columns: minmax(0, 1.65fr) minmax(18.5rem, 24.5rem);
+    gap: clamp(2rem, 3.5vw, 3rem);
+  }
+
+  .blog-detail__sidebar {
+    border-left: 1px solid rgb(212 212 216 / 0.95);
+    padding-left: clamp(1.5rem, 2.8vw, 2.25rem);
+  }
+}
+
+.blog-detail__main {
+  min-width: 0;
+}
+
+.blog-detail__breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+  margin: 0 0 clamp(1rem, 2.5vw, 1.35rem);
+  font-size: clamp(0.58rem, 2vw, 0.65rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.blog-detail__breadcrumb a {
+  color: var(--color-brand);
+  text-decoration: none;
+}
+
+.blog-detail__breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.blog-detail__breadcrumb-sep {
+  color: #9ca3af;
+}
+
+.blog-detail__breadcrumb [aria-current="page"] {
+  color: #6b7280;
+  text-transform: uppercase;
+}
+
+.blog-detail__title {
+  margin: 0;
+  font-size: clamp(1.35rem, 3.8vw, 2.15rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  color: #18181b;
+  overflow-wrap: break-word;
+}
+
+.blog-detail__byline {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: clamp(0.85rem, 2vw, 1.1rem);
+}
+
+.blog-detail__avatar {
+  display: block;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.blog-detail__author {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #18181b;
+  letter-spacing: 0.01em;
+}
+
+.blog-detail__featured {
+  margin: clamp(1.15rem, 2.5vw, 1.5rem) 0 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.blog-detail__featured img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: inherit;
+  object-fit: cover;
+}
+
+.blog-detail__body {
+  margin-top: clamp(1.15rem, 2.5vw, 1.5rem);
+  min-width: 0;
+}
+
+.blog-detail__body p {
+  margin: 0 0 1rem;
+  font-size: clamp(0.875rem, 1.35vw, 1rem);
+  line-height: 1.65;
+  color: #52525b;
+}
+
+.blog-detail__body p:last-child {
+  margin-bottom: 0;
+}
+
+.blog-detail__h2 {
+  margin: clamp(1.35rem, 2.8vw, 1.75rem) 0 0.65rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: #18181b;
+}
+
+.blog-detail__body .blog-detail__h2:first-of-type {
+  margin-top: clamp(1rem, 2.2vw, 1.35rem);
+}
+
+.blog-detail__list {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+  font-size: clamp(0.875rem, 1.35vw, 1rem);
+  line-height: 1.65;
+  color: #52525b;
+}
+
+.blog-detail__list li {
+  margin-bottom: 0.35rem;
+}
+
+.blog-detail__list li:last-child {
+  margin-bottom: 0;
+}
+
+.blog-detail__related-title {
+  margin: 0 0 clamp(1rem, 2.2vw, 1.35rem);
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.blog-detail__related-title-muted {
+  color: #18181b;
+}
+
+.blog-detail__related-title-accent {
+  color: var(--color-brand);
+}
+
+.blog-detail__related-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.9rem, 1.8vw, 1.15rem);
+}
+
+.blog-detail__related-list > li {
+  min-width: 0;
+}
+
+.blog-detail__sidebar .blog-explore-card {
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0;
+  min-height: 0;
+  height: auto;
+  overflow: hidden;
+  border: 1px solid rgb(228 228 231 / 0.95);
+  border-radius: 0.5rem;
+  background: #fff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.blog-detail__sidebar .blog-explore-card:hover {
+  border-color: rgb(203 213 225 / 0.95);
+  box-shadow: 0 10px 28px -10px rgb(15 23 42 / 0.1);
+}
+
+.blog-detail__sidebar .blog-explore-card:hover .blog-explore-card__content {
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.blog-detail__sidebar .blog-explore-card__media {
+  flex: 0 0 clamp(6.75rem, 40%, 9.5rem);
+  width: clamp(6.75rem, 40%, 9.5rem);
+  max-width: none;
+  align-self: stretch;
+  border-radius: 0;
+  overflow: hidden;
+  background: #f8fafc;
+}
+
+.blog-detail__sidebar .blog-explore-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 5.75rem;
+  aspect-ratio: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.blog-detail__sidebar .blog-explore-card__content {
+  flex: 1 1 auto;
+  min-width: 0;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0;
+  padding: clamp(0.7rem, 1.4vw, 0.85rem) clamp(0.75rem, 1.5vw, 0.95rem);
+  border: 0;
+  border-radius: 0;
+  background: #f4f4f5;
+  box-shadow: none;
+}
+
+.blog-detail__sidebar .blog-explore-card__title {
+  font-size: clamp(0.75rem, 1.1vw, 0.875rem);
+  line-height: 1.32;
+}
+
+.blog-detail__sidebar .blog-explore-card__desc {
+  font-size: clamp(0.6875rem, 1vw, 0.8125rem);
+  line-height: 1.42;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.blog-detail__sidebar .blog-explore-card__by {
+  margin-top: auto;
+  padding-top: 0.25rem;
+}
+
+@media (max-width: 899px) {
+  .blog-detail__sidebar {
+    padding-top: clamp(1.25rem, 3vw, 1.75rem);
+    border-top: 1px solid rgb(212 212 216 / 0.95);
+  }
+}
+
+@media (max-width: 479px) {
+  .blog-detail__sidebar .blog-explore-card {
+    flex-direction: row;
+  }
+
+  .blog-detail__sidebar .blog-explore-card__media {
+    flex: 0 0 clamp(5.75rem, 32vw, 7rem);
+    width: clamp(5.75rem, 32vw, 7rem);
+  }
+}
+
+.hero-blog-post-teaser {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.hero-blog-post-teaser:hover {
+  opacity: 0.92;
+}
+
+.hero-blog-post-teaser:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+  border-radius: 0.25rem;
+}
+
 .hero-section {
   position: relative;
   display: flex;
@@ -1778,7 +2062,6 @@ ol {
   color: #d8e2ff;
 }
 
-/* Keep full phrases on one line each (laptop+); wrap on smaller viewports to avoid horizontal scroll. */
 .hero-title .hero-title__line--nowrap {
   display: block;
   white-space: nowrap;
@@ -1918,10 +2201,6 @@ ol {
   }
 }
 
-/* -------------------------------------------------------------------------- */
-/* Hero — centered page cover (Our Machines)                                  */
-/* -------------------------------------------------------------------------- */
-
 .hero-section__shade--cover-centered {
   background: rgb(0 0 0 / 0.52);
   -webkit-backdrop-filter: blur(2px);
@@ -2023,10 +2302,6 @@ ol {
     font-size: 4.35rem;
   }
 }
-
-/* -------------------------------------------------------------------------- */
-/* Contact page — “Send us a message”                                         */
-/* -------------------------------------------------------------------------- */
 
 .contact-message-page {
   padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(3rem, 7vw, 5rem);
@@ -2196,10 +2471,6 @@ ol {
 .contact-message-form__submit:hover {
   opacity: 0.94;
 }
-
-/* -------------------------------------------------------------------------- */
-/* Home — One machine + machines band                                         */
-/* -------------------------------------------------------------------------- */
 
 .om-section {
   position: relative;
@@ -2617,10 +2888,6 @@ ol {
   color: var(--color-brand);
 }
 
-/* -------------------------------------------------------------------------- */
-/* Machine detail — gallery + accordions                                      */
-/* -------------------------------------------------------------------------- */
-
 .machine-detail {
   position: relative;
   z-index: 2;
@@ -2686,7 +2953,6 @@ ol {
   }
 }
 
-/* Car wash — sticky left bg image; right content + about banner scroll */
 .machine-detail__layout--sticky-bg {
   display: grid;
   gap: clamp(1.5rem, 3.5vw, 2.5rem);
@@ -2909,6 +3175,10 @@ ol {
   border-bottom: 1px solid #000;
 }
 
+.machine-detail__accordions .machine-acc:last-child {
+  border-bottom: none;
+}
+
 .machine-acc:first-child {
   border-top: 1px solid #000;
 }
@@ -2982,11 +3252,31 @@ ol {
 }
 
 .machine-acc__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  padding-bottom: 0;
+  overflow: hidden;
+  transition: grid-template-rows 0.32s ease, padding-bottom 0.32s ease;
+}
+
+.machine-acc.is-open .machine-acc__panel {
+  grid-template-rows: 1fr;
   padding-bottom: 1rem;
+}
+
+.machine-acc__panel-inner {
+  min-height: 0;
+  overflow: hidden;
 }
 
 .machine-acc__panel[hidden] {
   display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .machine-acc__panel {
+    transition: none;
+  }
 }
 
 .machine-acc__text {
@@ -3047,7 +3337,6 @@ ol {
   color: #52525b;
 }
 
-/* How it works — 3×2 snake flow */
 .machine-how {
   min-width: 0;
 }
@@ -3129,7 +3418,6 @@ ol {
   height: auto;
 }
 
-/* How it works — 2×2 quad flow (helmet cleaner) */
 .machine-how--quad .machine-how__grid {
   grid-template-columns: minmax(0, 1fr) minmax(3.5rem, 6.5rem) minmax(0, 1fr);
 }
@@ -3200,7 +3488,7 @@ ol {
   height: auto;
 }
 
-@media (max-width: 639px) {
+@media (max-width: 899px) {
   .machine-how__flow {
     padding-right: 0;
   }
@@ -3208,7 +3496,7 @@ ol {
   .machine-how__grid {
     display: flex;
     flex-direction: column;
-    gap: 1.15rem;
+    gap: 1rem;
   }
 
   .machine-how__arrow,
@@ -3217,13 +3505,36 @@ ol {
   }
 
   .machine-how--quad .machine-how__col-right {
-    grid-column: unset;
-    grid-row: unset;
-    gap: 1rem;
+    display: contents;
+  }
+
+  .machine-how--quad .machine-how__arrow--down {
+    display: none;
+  }
+
+  .machine-how__step,
+  .machine-how--quad .machine-how__step {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .machine-how__icon {
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .machine-how--quad .machine-how__step--1 {
+    order: 1;
+  }
+
+  .machine-how--quad .machine-how__step--2 {
+    order: 2;
   }
 
   .machine-how--quad .machine-how__step--3 {
-    order: unset;
+    order: 3;
   }
 
   .machine-how--quad .machine-how__step--4 {
@@ -3256,10 +3567,11 @@ ol {
 
   .machine-how__text {
     max-width: none;
+    flex: 1 1 auto;
+    font-size: clamp(0.6875rem, 2.8vw, 0.8125rem);
   }
 }
 
-/* Smart features — 2×2 grid */
 .machine-features {
   list-style: none;
   margin: 0;
@@ -3314,7 +3626,6 @@ ol {
   color: #52525b;
 }
 
-/* Car wash machine — full-width banner (reuses about-us-bottom) */
 .machine-detail-banner.about-us-bottom {
   margin: 0;
   transform: none;
@@ -3335,7 +3646,6 @@ ol {
   }
 }
 
-/* Car wash — about_page banner full viewport width */
 .machine-detail--sticky .machine-detail-banner.about-us-bottom {
   box-sizing: border-box;
   width: 100vw;
@@ -3363,14 +3673,237 @@ ol {
 
 @media (max-width: 899px) {
   .machine-detail--sticky .machine-detail-banner.about-us-bottom {
-    margin-top: clamp(2.15rem, 4.25vw, 3.25rem);
-    transform: translateY(clamp(1.75rem, 3.75vw, 2.65rem));
+    margin-top: clamp(1.75rem, 4.5vw, 2.75rem);
+    transform: none;
   }
 }
 
-/* -------------------------------------------------------------------------- */
-/* Franchise — Why partner with us                                            */
-/* -------------------------------------------------------------------------- */
+@media (max-width: 899px) {
+  .machine-detail {
+    overflow-x: clip;
+    padding-top: clamp(0.75rem, 2vw, 1rem);
+    padding-bottom: clamp(2rem, 5vw, 3rem);
+  }
+
+  .machine-detail--sticky .machine-detail__layout--sticky-bg {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 3vw, 1.5rem);
+  }
+
+  .machine-detail__bg,
+  .machine-detail--sticky .machine-detail__bg {
+    order: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .machine-detail--sticky .machine-detail__bg {
+    position: relative;
+    top: auto;
+    grid-column: unset;
+    grid-row: unset;
+  }
+
+  .machine-detail__bg-img,
+  .machine-detail--sticky .machine-detail__bg-img {
+    display: block;
+    width: auto;
+    max-width: min(100%, 18.5rem);
+    max-height: clamp(14rem, 48vw, 21rem);
+    margin-left: auto;
+    margin-right: auto;
+    transform: none;
+    object-fit: contain;
+    object-position: center center;
+  }
+
+  .machine-detail__content,
+  .machine-detail--sticky .machine-detail__content {
+    grid-column: unset;
+    grid-row: unset;
+    min-height: 0;
+  }
+
+  .machine-detail__main {
+    margin-top: 0;
+  }
+
+  .machine-detail__badge {
+    max-width: 100%;
+    padding: 0.38rem 0.8rem;
+    font-size: clamp(0.5rem, 2.6vw, 0.5625rem);
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+  }
+
+  .machine-detail__page-title {
+    font-size: clamp(1.15rem, 5.2vw, 1.75rem);
+    letter-spacing: 0.05em;
+  }
+
+  .machine-detail__breadcrumb {
+    margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+    font-size: clamp(0.58rem, 2.1vw, 0.65rem);
+    line-height: 1.4;
+  }
+
+  .machine-detail--sticky .machine-detail-banner.about-us-bottom {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    transform: none;
+    margin-top: clamp(1.75rem, 4.5vw, 2.75rem);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: #0a4aa3;
+  }
+
+  .machine-detail--juice .machine-detail-banner.about-us-bottom {
+    background: #bd090e;
+  }
+
+  .machine-detail--sticky .machine-detail-banner.about-us-bottom .about-us-bottom__img {
+    position: relative;
+    z-index: 0;
+    flex-shrink: 0;
+    width: 100%;
+    min-height: clamp(7.5rem, 30vw, 10.5rem);
+    max-height: clamp(9rem, 36vw, 12.5rem);
+    height: clamp(7.5rem, 30vw, 10.5rem);
+    object-fit: cover;
+    object-position: 25% center;
+  }
+
+  .machine-detail--juice .machine-detail-banner.about-us-bottom .about-us-bottom__img {
+    object-position: center 40%;
+  }
+
+  .machine-detail--sticky .machine-detail-banner.about-us-bottom .about-us-bottom__overlay {
+    position: relative;
+    inset: auto;
+    z-index: 1;
+    flex: 1 1 auto;
+    align-items: stretch;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    width: 100%;
+    padding: clamp(1rem, 3.5vw, 1.35rem) var(--site-px);
+    background: linear-gradient(180deg, rgb(10 74 163 / 0.97) 0%, rgb(8 63 139 / 1) 100%);
+    pointer-events: auto;
+  }
+
+  .machine-detail--juice .machine-detail-banner.about-us-bottom .about-us-bottom__overlay {
+    background: linear-gradient(180deg, rgb(189 9 14 / 0.96) 0%, rgb(140 7 10 / 1) 100%);
+  }
+
+  .machine-detail--sticky .machine-detail-banner .site-container.about-us-bottom__grid {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+  }
+
+  .machine-detail--sticky .machine-detail-banner .about-us-bottom__grid {
+    grid-template-columns: 1fr;
+    gap: clamp(0.75rem, 2.5vw, 1rem);
+  }
+
+  .machine-detail--sticky .machine-detail-banner .about-us-bottom__headline,
+  .machine-detail--sticky .machine-detail-banner .about-us-bottom__title,
+  .machine-detail--sticky .machine-detail-banner .about-us-bottom__p {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 899px) {
+  .machine-detail__bg-img,
+  .machine-detail--sticky .machine-detail__bg-img {
+    max-width: min(100%, 22rem);
+    max-height: clamp(16rem, 42vw, 24rem);
+  }
+}
+
+@media (max-width: 479px) {
+  .machine-detail__accordions {
+    gap: 0.75rem;
+  }
+
+  .machine-acc__trigger {
+    padding: 0.75rem 0;
+    gap: 0.5rem;
+  }
+
+  .machine-acc__label {
+    font-size: 0.875rem;
+  }
+
+  .machine-acc__text,
+  .machine-benefit__text,
+  .machine-feature__text {
+    font-size: 0.8125rem;
+  }
+
+  .machine-benefit__icon {
+    width: 2.35rem;
+    height: 2.35rem;
+  }
+
+  .machine-benefit__icon img {
+    width: 1.9rem;
+    height: 1.9rem;
+  }
+
+  .machine-detail--sticky .machine-detail-banner.about-us-bottom {
+    margin-top: clamp(1.25rem, 4vw, 2rem);
+    border-radius: 0.35rem;
+  }
+
+  .machine-detail--sticky .machine-detail-banner.about-us-bottom .about-us-bottom__img {
+    min-height: clamp(6.5rem, 28vw, 9rem);
+    max-height: clamp(7.5rem, 32vw, 10rem);
+    height: clamp(6.5rem, 28vw, 9rem);
+  }
+
+  .machine-detail--sticky .machine-detail-banner.about-us-bottom .about-us-bottom__overlay {
+    padding: clamp(0.85rem, 3.5vw, 1.1rem) var(--site-px);
+  }
+
+  .machine-detail--sticky .machine-detail-banner .about-us-bottom__headline {
+    font-size: clamp(1rem, 4.5vw, 1.25rem);
+  }
+
+  .machine-detail--sticky .machine-detail-banner .about-us-bottom__title {
+    font-size: clamp(0.8125rem, 3.2vw, 0.9375rem);
+  }
+
+  .machine-detail--sticky .machine-detail-banner .about-us-bottom__p {
+    font-size: clamp(0.6875rem, 2.4vw, 0.8125rem);
+    line-height: 1.5;
+  }
+
+  .machine-detail + .franchise-faq .franchise-faq-item__trigger {
+    padding: 0.75rem 0.85rem;
+    font-size: 0.8125rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .machine-detail__inner {
+    overflow-x: clip;
+  }
+}
 
 .franchise-why {
   position: relative;
@@ -3419,7 +3952,6 @@ ol {
   text-align: left;
 }
 
-/* Left column: tight collage + copy aligned under team photo (matches reference) */
 .franchise-why__visual {
   width: 100%;
   max-width: clamp(17.25rem, 88vw, 21.5rem);
@@ -3457,16 +3989,12 @@ ol {
   }
 }
 
-/*
- * Collage slots: same .franchise-why__stack box as before; each img fills a % zone
- * inside the stack with object-fit: cover so pixels scale cleanly with the div.
- */
 .franchise-why__img-back {
   display: block;
   position: absolute;
   right: -4%;
   bottom: 0;
-  /* Shorter + slightly wider slot; upper img unchanged */
+
   width: 52%;
   height: 48%;
   max-width: none;
@@ -3475,7 +4003,7 @@ ol {
   object-position: center;
   border-radius: 0;
   box-shadow: none;
-  /* Above front img where layers overlap so this photo isn’t hidden underneath */
+
   z-index: 2;
 }
 
@@ -3527,12 +4055,11 @@ ol {
   }
 }
 
-/* In the left strip below the city shot, left of the team shot */
 .franchise-why__copy {
   position: absolute;
   left: 0;
   top: 61%;
-  /* As wide as the left gap allows so nowrap lines fit */
+
   width: min(54%, 13.25rem);
   margin: 0;
   padding: 0 0.35rem 0 0;
@@ -3568,7 +4095,6 @@ ol {
   }
 }
 
-/* Narrow phones: gap too tight — flow below collage */
 @media (max-width: 479px) {
   .franchise-why__copy {
     position: static;
@@ -3595,7 +4121,7 @@ ol {
   margin-left: 0;
   margin-right: 0;
   text-align: left;
-  /* Fluid size so 3 nowrap rows usually fit the strip without clipping */
+
   font-size: clamp(0.5rem, 0.65vw + 0.38rem, 0.72rem);
   line-height: 1.38;
   color: #3f3f46;
@@ -3715,14 +4241,9 @@ ol {
   color: #4b5563;
 }
 
-/* -------------------------------------------------------------------------- */
-/* Franchise — FAQ                                                            */
-/* -------------------------------------------------------------------------- */
-
 .franchise-faq {
   padding: clamp(1.75rem, 4vw, 2.75rem) 0 clamp(2.25rem, 4.5vw, 3.25rem);
   background: #fff;
-  border-top: 1px solid rgb(0 0 0 / 0.07);
 }
 
 .franchise-faq__inner {
@@ -3823,6 +4344,15 @@ ol {
 }
 
 .franchise-faq-item__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  padding: 0 1.1rem;
+  overflow: hidden;
+  transition: grid-template-rows 0.32s ease, padding 0.32s ease;
+}
+
+.franchise-faq-item.is-open .franchise-faq-item__panel {
+  grid-template-rows: 1fr;
   padding: 0 1.1rem 0.9rem;
 }
 
@@ -3832,6 +4362,8 @@ ol {
 
 .franchise-faq-item__answer {
   margin: 0;
+  min-height: 0;
+  overflow: hidden;
   padding-top: 0.15rem;
   font-size: clamp(0.75rem, 1.2vw, 0.875rem);
   line-height: 1.55;
@@ -3839,9 +4371,11 @@ ol {
   color: #52525b;
 }
 
-/* -------------------------------------------------------------------------- */
-/* Footer include (classes match includes/footer.html)                        */
-/* -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .franchise-faq-item__panel {
+    transition: none;
+  }
+}
 
 .latest-articles__inner,
 .footer-touch-inner,
@@ -3857,7 +4391,6 @@ ol {
   height: auto;
 }
 
-/* Apple juice machine — red accent + gallery layout */
 .machine-detail--juice {
   --machine-accent: var(--color-brand-red);
 }
