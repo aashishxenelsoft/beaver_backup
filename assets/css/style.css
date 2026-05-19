@@ -1175,10 +1175,22 @@ ol {
     min-height: clamp(11.5rem, 44vw, 16rem);
   }
 
+  .machine-detail--sticky .machine-detail-banner.about-us-bottom .about-us-bottom__img {
+    min-height: clamp(7.5rem, 30vw, 10.5rem);
+    max-height: clamp(9rem, 36vw, 12.5rem);
+    height: clamp(7.5rem, 30vw, 10.5rem);
+  }
+
   .about-us-bottom__overlay {
     align-items: flex-start;
     padding-top: clamp(2.5rem, 10vw, 3.5rem);
     padding-bottom: clamp(0.5rem, 2vw, 0.75rem);
+  }
+
+  .machine-detail--sticky .machine-detail-banner.about-us-bottom .about-us-bottom__overlay {
+    align-items: stretch;
+    padding-top: clamp(1rem, 3.5vw, 1.35rem);
+    padding-bottom: clamp(1rem, 3.5vw, 1.35rem);
   }
 
   .about-us-bottom__grid {
@@ -1230,9 +1242,20 @@ ol {
     min-height: clamp(10rem, 40vw, 13.5rem);
   }
 
+  .machine-detail--sticky .machine-detail-banner.about-us-bottom .about-us-bottom__img {
+    min-height: clamp(6.5rem, 28vw, 9rem);
+    max-height: clamp(7.5rem, 32vw, 10rem);
+    height: clamp(6.5rem, 28vw, 9rem);
+  }
+
   .about-us-bottom__overlay {
     padding-top: clamp(2.85rem, 12vw, 4rem);
     padding-bottom: clamp(0.4rem, 1.5vw, 0.65rem);
+  }
+
+  .machine-detail--sticky .machine-detail-banner.about-us-bottom .about-us-bottom__overlay {
+    padding-top: clamp(0.85rem, 3.5vw, 1.1rem);
+    padding-bottom: clamp(0.85rem, 3.5vw, 1.1rem);
   }
 
   .about-us-bottom__grid {
@@ -2909,6 +2932,10 @@ ol {
   border-bottom: 1px solid #000;
 }
 
+.machine-detail__accordions .machine-acc:last-child {
+  border-bottom: none;
+}
+
 .machine-acc:first-child {
   border-top: 1px solid #000;
 }
@@ -3200,7 +3227,7 @@ ol {
   height: auto;
 }
 
-@media (max-width: 639px) {
+@media (max-width: 899px) {
   .machine-how__flow {
     padding-right: 0;
   }
@@ -3208,7 +3235,7 @@ ol {
   .machine-how__grid {
     display: flex;
     flex-direction: column;
-    gap: 1.15rem;
+    gap: 1rem;
   }
 
   .machine-how__arrow,
@@ -3217,13 +3244,36 @@ ol {
   }
 
   .machine-how--quad .machine-how__col-right {
-    grid-column: unset;
-    grid-row: unset;
-    gap: 1rem;
+    display: contents;
+  }
+
+  .machine-how--quad .machine-how__arrow--down {
+    display: none;
+  }
+
+  .machine-how__step,
+  .machine-how--quad .machine-how__step {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .machine-how__icon {
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .machine-how--quad .machine-how__step--1 {
+    order: 1;
+  }
+
+  .machine-how--quad .machine-how__step--2 {
+    order: 2;
   }
 
   .machine-how--quad .machine-how__step--3 {
-    order: unset;
+    order: 3;
   }
 
   .machine-how--quad .machine-how__step--4 {
@@ -3256,6 +3306,8 @@ ol {
 
   .machine-how__text {
     max-width: none;
+    flex: 1 1 auto;
+    font-size: clamp(0.6875rem, 2.8vw, 0.8125rem);
   }
 }
 
@@ -3363,8 +3415,236 @@ ol {
 
 @media (max-width: 899px) {
   .machine-detail--sticky .machine-detail-banner.about-us-bottom {
-    margin-top: clamp(2.15rem, 4.25vw, 3.25rem);
-    transform: translateY(clamp(1.75rem, 3.75vw, 2.65rem));
+    margin-top: clamp(1.75rem, 4.5vw, 2.75rem);
+    transform: none;
+  }
+}
+
+/* Machine detail — responsive (car wash, helmet, apple juice, mat) */
+@media (max-width: 899px) {
+  .machine-detail {
+    overflow-x: clip;
+    padding-top: clamp(0.75rem, 2vw, 1rem);
+    padding-bottom: clamp(2rem, 5vw, 3rem);
+  }
+
+  .machine-detail--sticky .machine-detail__layout--sticky-bg {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 3vw, 1.5rem);
+  }
+
+  .machine-detail__bg,
+  .machine-detail--sticky .machine-detail__bg {
+    order: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .machine-detail--sticky .machine-detail__bg {
+    position: relative;
+    top: auto;
+    grid-column: unset;
+    grid-row: unset;
+  }
+
+  .machine-detail__bg-img,
+  .machine-detail--sticky .machine-detail__bg-img {
+    display: block;
+    width: auto;
+    max-width: min(100%, 18.5rem);
+    max-height: clamp(14rem, 48vw, 21rem);
+    margin-left: auto;
+    margin-right: auto;
+    transform: none;
+    object-fit: contain;
+    object-position: center center;
+  }
+
+  .machine-detail__content,
+  .machine-detail--sticky .machine-detail__content {
+    grid-column: unset;
+    grid-row: unset;
+    min-height: 0;
+  }
+
+  .machine-detail__main {
+    margin-top: 0;
+  }
+
+  .machine-detail__badge {
+    max-width: 100%;
+    padding: 0.38rem 0.8rem;
+    font-size: clamp(0.5rem, 2.6vw, 0.5625rem);
+    letter-spacing: 0.1em;
+    line-height: 1.4;
+  }
+
+  .machine-detail__page-title {
+    font-size: clamp(1.15rem, 5.2vw, 1.75rem);
+    letter-spacing: 0.05em;
+  }
+
+  .machine-detail__breadcrumb {
+    margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+    font-size: clamp(0.58rem, 2.1vw, 0.65rem);
+    line-height: 1.4;
+  }
+
+  .machine-detail--sticky .machine-detail-banner.about-us-bottom {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    transform: none;
+    margin-top: clamp(1.75rem, 4.5vw, 2.75rem);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: #0a4aa3;
+  }
+
+  .machine-detail--juice .machine-detail-banner.about-us-bottom {
+    background: #bd090e;
+  }
+
+  .machine-detail--sticky .machine-detail-banner.about-us-bottom .about-us-bottom__img {
+    position: relative;
+    z-index: 0;
+    flex-shrink: 0;
+    width: 100%;
+    min-height: clamp(7.5rem, 30vw, 10.5rem);
+    max-height: clamp(9rem, 36vw, 12.5rem);
+    height: clamp(7.5rem, 30vw, 10.5rem);
+    object-fit: cover;
+    object-position: 25% center;
+  }
+
+  .machine-detail--juice .machine-detail-banner.about-us-bottom .about-us-bottom__img {
+    object-position: center 40%;
+  }
+
+  .machine-detail--sticky .machine-detail-banner.about-us-bottom .about-us-bottom__overlay {
+    position: relative;
+    inset: auto;
+    z-index: 1;
+    flex: 1 1 auto;
+    align-items: stretch;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    width: 100%;
+    padding: clamp(1rem, 3.5vw, 1.35rem) var(--site-px);
+    background: linear-gradient(180deg, rgb(10 74 163 / 0.97) 0%, rgb(8 63 139 / 1) 100%);
+    pointer-events: auto;
+  }
+
+  .machine-detail--juice .machine-detail-banner.about-us-bottom .about-us-bottom__overlay {
+    background: linear-gradient(180deg, rgb(189 9 14 / 0.96) 0%, rgb(140 7 10 / 1) 100%);
+  }
+
+  .machine-detail--sticky .machine-detail-banner .site-container.about-us-bottom__grid {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+  }
+
+  .machine-detail--sticky .machine-detail-banner .about-us-bottom__grid {
+    grid-template-columns: 1fr;
+    gap: clamp(0.75rem, 2.5vw, 1rem);
+  }
+
+  .machine-detail--sticky .machine-detail-banner .about-us-bottom__headline,
+  .machine-detail--sticky .machine-detail-banner .about-us-bottom__title,
+  .machine-detail--sticky .machine-detail-banner .about-us-bottom__p {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 899px) {
+  .machine-detail__bg-img,
+  .machine-detail--sticky .machine-detail__bg-img {
+    max-width: min(100%, 22rem);
+    max-height: clamp(16rem, 42vw, 24rem);
+  }
+}
+
+@media (max-width: 479px) {
+  .machine-detail__accordions {
+    gap: 0.75rem;
+  }
+
+  .machine-acc__trigger {
+    padding: 0.75rem 0;
+    gap: 0.5rem;
+  }
+
+  .machine-acc__label {
+    font-size: 0.875rem;
+  }
+
+  .machine-acc__text,
+  .machine-benefit__text,
+  .machine-feature__text {
+    font-size: 0.8125rem;
+  }
+
+  .machine-benefit__icon {
+    width: 2.35rem;
+    height: 2.35rem;
+  }
+
+  .machine-benefit__icon img {
+    width: 1.9rem;
+    height: 1.9rem;
+  }
+
+  .machine-detail--sticky .machine-detail-banner.about-us-bottom {
+    margin-top: clamp(1.25rem, 4vw, 2rem);
+    border-radius: 0.35rem;
+  }
+
+  .machine-detail--sticky .machine-detail-banner.about-us-bottom .about-us-bottom__img {
+    min-height: clamp(6.5rem, 28vw, 9rem);
+    max-height: clamp(7.5rem, 32vw, 10rem);
+    height: clamp(6.5rem, 28vw, 9rem);
+  }
+
+  .machine-detail--sticky .machine-detail-banner.about-us-bottom .about-us-bottom__overlay {
+    padding: clamp(0.85rem, 3.5vw, 1.1rem) var(--site-px);
+  }
+
+  .machine-detail--sticky .machine-detail-banner .about-us-bottom__headline {
+    font-size: clamp(1rem, 4.5vw, 1.25rem);
+  }
+
+  .machine-detail--sticky .machine-detail-banner .about-us-bottom__title {
+    font-size: clamp(0.8125rem, 3.2vw, 0.9375rem);
+  }
+
+  .machine-detail--sticky .machine-detail-banner .about-us-bottom__p {
+    font-size: clamp(0.6875rem, 2.4vw, 0.8125rem);
+    line-height: 1.5;
+  }
+
+  .machine-detail + .franchise-faq .franchise-faq-item__trigger {
+    padding: 0.75rem 0.85rem;
+    font-size: 0.8125rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .machine-detail__inner {
+    overflow-x: clip;
   }
 }
 
