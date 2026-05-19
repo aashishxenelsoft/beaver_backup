@@ -1,13 +1,7 @@
-/**
- * Beaver Energy — plain CSS (no Tailwind).
- * Content width scales up on large desktops (--site-max); gutters stay proportional (--site-px).
- */
 
 :root {
   --site-max: 1200px;
-  /* Sticky header row + iOS safe-area so dropdown + hero heights match the real chrome. */
   --site-header-stack: calc(4.5rem + env(safe-area-inset-top, 0px));
-  /* Tighter gutters on phones; 640px+ matches original scale (laptop unchanged from 1024px up). */
   --site-px: clamp(0.875rem, 4.2vw, 1.35rem);
   --color-gray-100: #f3f4f6;
   --color-gray-200: #e5e7eb;
@@ -86,7 +80,7 @@
 html {
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
-  /* clip avoids horizontal bleed without turning the root into a scroll container that breaks position:sticky */
+
   overflow-x: clip;
   scroll-padding-top: var(--site-header-stack);
 }
@@ -144,10 +138,6 @@ ol {
   padding: 0;
 }
 
-/* -------------------------------------------------------------------------- */
-/* Base layout                                                                */
-/* -------------------------------------------------------------------------- */
-
 .site-body {
   min-height: 100vh;
   min-height: 100dvh;
@@ -188,10 +178,6 @@ ol {
   padding-right: var(--site-px);
 }
 
-/* -------------------------------------------------------------------------- */
-/* Skip link                                                                  */
-/* -------------------------------------------------------------------------- */
-
 .skip-link {
   position: absolute;
   left: 1rem;
@@ -213,10 +199,6 @@ ol {
   outline: 2px solid #fff;
   outline-offset: 2px;
 }
-
-/* -------------------------------------------------------------------------- */
-/* Site header                                                                */
-/* -------------------------------------------------------------------------- */
 
 .site-header {
   position: sticky;
@@ -510,10 +492,6 @@ ol {
   }
 }
 
-/* -------------------------------------------------------------------------- */
-/* Home hero                                                                  */
-/* -------------------------------------------------------------------------- */
-
 .hero-layout {
   display: flex;
   min-height: 100vh;
@@ -648,10 +626,6 @@ ol {
   }
 }
 
-/* -------------------------------------------------------------------------- */
-/* About — intro (collage + copy), then middle_container                        */
-/* -------------------------------------------------------------------------- */
-
 .about-intro {
   position: relative;
   z-index: 2;
@@ -785,7 +759,6 @@ ol {
   margin: clamp(1.1rem, 2.5vw, 1.5rem) 0 0;
 }
 
-/* About — mission | middle_image | vision */
 .about-mvv {
   --about-mvv-pull: clamp(-1rem, -3.5vw, 0);
   position: relative;
@@ -975,8 +948,6 @@ ol {
   }
 }
 
-/* About — middle band (below intro) */
-
 .middle_container {
   position: relative;
   z-index: 0;
@@ -992,7 +963,6 @@ ol {
   min-height: 0;
 }
 
-/* About page banner: under intro; pull up with margin + translate (margin collapse safe) */
 .about-us-bottom {
   box-sizing: border-box;
   position: relative;
@@ -1155,7 +1125,6 @@ ol {
   }
 }
 
-/* About page — responsive (mobile / tablet) */
 @media (max-width: 479px) {
   .about-intro__collage {
     gap: 0.5rem;
@@ -1344,7 +1313,6 @@ ol {
   }
 }
 
-/* Hero — blog post cover (left text, same short viewport height as machines) */
 .hero-section__shade--blog-post {
   background: linear-gradient(to right,
       rgb(0 0 0 / 0.82),
@@ -1363,7 +1331,7 @@ ol {
 .hero-section__blog-post-inner {
   display: flex;
   width: 100%;
-  /* Width/padding: .site-container (same horizontal gutter as .site-header__inner) */
+
   min-width: 0;
   box-sizing: border-box;
   flex-direction: column;
@@ -1426,7 +1394,6 @@ ol {
   display: block;
 }
 
-/* Keep “…Commercial Apple” on one line; second phrase on the next */
 .hero-blog-title__line--1 {
   white-space: nowrap;
 }
@@ -1484,10 +1451,6 @@ ol {
     margin-top: 1rem;
   }
 }
-
-/* -------------------------------------------------------------------------- */
-/* Blog — Explore grid                                                        */
-/* -------------------------------------------------------------------------- */
 
 .blog-explore {
   padding: clamp(2rem, 4vw, 3rem) 0 clamp(2.5rem, 5vw, 4rem);
@@ -1695,10 +1658,6 @@ ol {
   }
 }
 
-/* -------------------------------------------------------------------------- */
-/* Blog — Detail page                                                         */
-/* -------------------------------------------------------------------------- */
-
 .blog-detail {
   padding: clamp(1.5rem, 3.5vw, 2.5rem) 0 clamp(2.5rem, 5vw, 4rem);
   background: #fff;
@@ -1853,17 +1812,6 @@ ol {
   margin-bottom: 0;
 }
 
-.blog-detail__body a {
-  color: var(--color-brand);
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.blog-detail__body a:hover {
-  opacity: 0.88;
-}
-
 .blog-detail__related-title {
   margin: 0 0 clamp(1rem, 2.2vw, 1.35rem);
   font-size: clamp(1.05rem, 2.2vw, 1.35rem);
@@ -1893,7 +1841,6 @@ ol {
   min-width: 0;
 }
 
-/* Related blogs — full card border, image left, gray panel right (matches mockup) */
 .blog-detail__sidebar .blog-explore-card {
   flex-direction: row;
   align-items: stretch;
@@ -2115,7 +2062,6 @@ ol {
   color: #d8e2ff;
 }
 
-/* Keep full phrases on one line each (laptop+); wrap on smaller viewports to avoid horizontal scroll. */
 .hero-title .hero-title__line--nowrap {
   display: block;
   white-space: nowrap;
@@ -2255,10 +2201,6 @@ ol {
   }
 }
 
-/* -------------------------------------------------------------------------- */
-/* Hero — centered page cover (Our Machines)                                  */
-/* -------------------------------------------------------------------------- */
-
 .hero-section__shade--cover-centered {
   background: rgb(0 0 0 / 0.52);
   -webkit-backdrop-filter: blur(2px);
@@ -2360,10 +2302,6 @@ ol {
     font-size: 4.35rem;
   }
 }
-
-/* -------------------------------------------------------------------------- */
-/* Contact page — “Send us a message”                                         */
-/* -------------------------------------------------------------------------- */
 
 .contact-message-page {
   padding: clamp(2.5rem, 6vw, 4rem) 0 clamp(3rem, 7vw, 5rem);
@@ -2533,10 +2471,6 @@ ol {
 .contact-message-form__submit:hover {
   opacity: 0.94;
 }
-
-/* -------------------------------------------------------------------------- */
-/* Home — One machine + machines band                                         */
-/* -------------------------------------------------------------------------- */
 
 .om-section {
   position: relative;
@@ -2954,10 +2888,6 @@ ol {
   color: var(--color-brand);
 }
 
-/* -------------------------------------------------------------------------- */
-/* Machine detail — gallery + accordions                                      */
-/* -------------------------------------------------------------------------- */
-
 .machine-detail {
   position: relative;
   z-index: 2;
@@ -3023,7 +2953,6 @@ ol {
   }
 }
 
-/* Car wash — sticky left bg image; right content + about banner scroll */
 .machine-detail__layout--sticky-bg {
   display: grid;
   gap: clamp(1.5rem, 3.5vw, 2.5rem);
@@ -3408,7 +3337,6 @@ ol {
   color: #52525b;
 }
 
-/* How it works — 3×2 snake flow */
 .machine-how {
   min-width: 0;
 }
@@ -3490,7 +3418,6 @@ ol {
   height: auto;
 }
 
-/* How it works — 2×2 quad flow (helmet cleaner) */
 .machine-how--quad .machine-how__grid {
   grid-template-columns: minmax(0, 1fr) minmax(3.5rem, 6.5rem) minmax(0, 1fr);
 }
@@ -3645,7 +3572,6 @@ ol {
   }
 }
 
-/* Smart features — 2×2 grid */
 .machine-features {
   list-style: none;
   margin: 0;
@@ -3700,7 +3626,6 @@ ol {
   color: #52525b;
 }
 
-/* Car wash machine — full-width banner (reuses about-us-bottom) */
 .machine-detail-banner.about-us-bottom {
   margin: 0;
   transform: none;
@@ -3721,7 +3646,6 @@ ol {
   }
 }
 
-/* Car wash — about_page banner full viewport width */
 .machine-detail--sticky .machine-detail-banner.about-us-bottom {
   box-sizing: border-box;
   width: 100vw;
@@ -3754,7 +3678,6 @@ ol {
   }
 }
 
-/* Machine detail — responsive (car wash, helmet, apple juice, mat) */
 @media (max-width: 899px) {
   .machine-detail {
     overflow-x: clip;
@@ -3982,10 +3905,6 @@ ol {
   }
 }
 
-/* -------------------------------------------------------------------------- */
-/* Franchise — Why partner with us                                            */
-/* -------------------------------------------------------------------------- */
-
 .franchise-why {
   position: relative;
   padding: clamp(1.25rem, 3vw, 2rem) 0 clamp(2.5rem, 5vw, 3.75rem);
@@ -4033,7 +3952,6 @@ ol {
   text-align: left;
 }
 
-/* Left column: tight collage + copy aligned under team photo (matches reference) */
 .franchise-why__visual {
   width: 100%;
   max-width: clamp(17.25rem, 88vw, 21.5rem);
@@ -4071,16 +3989,12 @@ ol {
   }
 }
 
-/*
- * Collage slots: same .franchise-why__stack box as before; each img fills a % zone
- * inside the stack with object-fit: cover so pixels scale cleanly with the div.
- */
 .franchise-why__img-back {
   display: block;
   position: absolute;
   right: -4%;
   bottom: 0;
-  /* Shorter + slightly wider slot; upper img unchanged */
+
   width: 52%;
   height: 48%;
   max-width: none;
@@ -4089,7 +4003,7 @@ ol {
   object-position: center;
   border-radius: 0;
   box-shadow: none;
-  /* Above front img where layers overlap so this photo isn’t hidden underneath */
+
   z-index: 2;
 }
 
@@ -4141,12 +4055,11 @@ ol {
   }
 }
 
-/* In the left strip below the city shot, left of the team shot */
 .franchise-why__copy {
   position: absolute;
   left: 0;
   top: 61%;
-  /* As wide as the left gap allows so nowrap lines fit */
+
   width: min(54%, 13.25rem);
   margin: 0;
   padding: 0 0.35rem 0 0;
@@ -4182,7 +4095,6 @@ ol {
   }
 }
 
-/* Narrow phones: gap too tight — flow below collage */
 @media (max-width: 479px) {
   .franchise-why__copy {
     position: static;
@@ -4209,7 +4121,7 @@ ol {
   margin-left: 0;
   margin-right: 0;
   text-align: left;
-  /* Fluid size so 3 nowrap rows usually fit the strip without clipping */
+
   font-size: clamp(0.5rem, 0.65vw + 0.38rem, 0.72rem);
   line-height: 1.38;
   color: #3f3f46;
@@ -4328,10 +4240,6 @@ ol {
   line-height: 1.48;
   color: #4b5563;
 }
-
-/* -------------------------------------------------------------------------- */
-/* Franchise — FAQ                                                            */
-/* -------------------------------------------------------------------------- */
 
 .franchise-faq {
   padding: clamp(1.75rem, 4vw, 2.75rem) 0 clamp(2.25rem, 4.5vw, 3.25rem);
@@ -4469,10 +4377,6 @@ ol {
   }
 }
 
-/* -------------------------------------------------------------------------- */
-/* Footer include (classes match includes/footer.html)                        */
-/* -------------------------------------------------------------------------- */
-
 .latest-articles__inner,
 .footer-touch-inner,
 .footer-container,
@@ -4487,7 +4391,6 @@ ol {
   height: auto;
 }
 
-/* Apple juice machine — red accent + gallery layout */
 .machine-detail--juice {
   --machine-accent: var(--color-brand-red);
 }

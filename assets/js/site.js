@@ -1,7 +1,3 @@
-/**
- * Static includes loader + mobile nav toggle.
- * WordPress: remove fetch logic; use get_header() / get_footer() and wp_nav_menu() instead.
- */
 
 (function () {
   "use strict";
@@ -27,10 +23,16 @@
     }
   }
 
-  function applyFooterArticlesVisibility() {
-    if (document.body.getAttribute("data-footer-articles") !== "false") return;
-    var articles = document.getElementById("footer-latest-articles");
-    if (articles) articles.remove();
+  function applyFooterVisibility() {
+    if (document.body.getAttribute("data-footer-articles") === "false") {
+      var articles = document.getElementById("footer-latest-articles");
+      if (articles) articles.remove();
+    }
+
+    if (document.body.getAttribute("data-footer-touch") === "false") {
+      var touch = document.getElementById("footer-get-in-touch");
+      if (touch) touch.remove();
+    }
   }
 
   function setActiveNav() {
@@ -175,7 +177,7 @@
     await injectPartial(headerUrl, headerMount);
     await injectPartial(footerUrl, footerMount);
 
-    applyFooterArticlesVisibility();
+    applyFooterVisibility();
 
     setActiveNav();
     initNavToggle();
